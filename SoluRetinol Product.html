@@ -3087,7 +3087,7 @@ function run(){
       if(atc){
         var po=el('<div class="solu-po"><h4>Purchase Options</h4>'
           +'<label class="sel"><span class="l"><span class="dot"></span>One-Time Purchase</span><span class="price">$59.00</span><input type="radio" name="solupo" checked></label>'
-          +'<label><span class="l"><span class="dot"></span>Subscribe &amp; Save</span><span class="save">SAVE 10%</span><span class="price">$53.00<s>$59.00</s></span><input type="radio" name="solupo"></label>'
+          +'<label><span class="l"><span class="dot"></span><span class="t">Subscribe &amp; Save</span><span class="save">SAVE 10%</span></span><span class="price">$53.00<s>$59.00</s></span><input type="radio" name="solupo"></label>'
           +'</div>');
         var form=atc.closest('form')||atc.parentNode;
         form.parentNode.insertBefore(po, form);
@@ -5343,7 +5343,7 @@ function run(){
       if(atc){
         var po=el('<div class="solu-po"><h4>Purchase Options</h4>'
           +'<label class="sel"><span class="l"><span class="dot"></span>One-Time Purchase</span><span class="price">$59.00</span><input type="radio" name="solupo" checked></label>'
-          +'<label><span class="l"><span class="dot"></span>Subscribe &amp; Save</span><span class="save">SAVE 10%</span><span class="price">$53.00<s>$59.00</s></span><input type="radio" name="solupo"></label>'
+          +'<label><span class="l"><span class="dot"></span><span class="t">Subscribe &amp; Save</span><span class="save">SAVE 10%</span></span><span class="price">$53.00<s>$59.00</s></span><input type="radio" name="solupo"></label>'
           +'</div>');
         var form=atc.closest('form')||atc.parentNode;
         form.parentNode.insertBefore(po, form);
@@ -5858,4 +5858,4 @@ function init(){
 if(document.readyState!=='loading') init(); else document.addEventListener('DOMContentLoaded',init);
 window.addEventListener('load',init); setTimeout(init,600); setTimeout(init,1500);
 })();
-</script><style id=solu-pageend-css>scroll-animate ~ *:not(#shopify-chat):not([id^="solu-"]):not([class*="solu-"]){display:none !important}</style><style id=solu-rebuy-hide-css>.rebuy-widget,[data-rebuy-id],[data-rebuy-component="cross-sell-widget"],.rebuy-product-grid{display:none !important}</style>
+</script><style id=solu-pageend-css>scroll-animate ~ *:not(#shopify-chat):not([id^="solu-"]):not([class*="solu-"]){display:none !important}</style><style id=solu-rebuy-hide-css>.rebuy-widget,[data-rebuy-id],[data-rebuy-component="cross-sell-widget"],.rebuy-product-grid{display:none !important}</style><style id=solu-polish-css>.footer-block--newsletter .prose,.footer-block--newsletter .prose p{color:#3a352f !important}.solu-po label{display:flex !important;align-items:center !important;justify-content:space-between !important;gap:12px;padding:15px 18px}.solu-po .l{display:flex !important;align-items:center !important;flex-wrap:wrap;gap:7px 9px;font-size:16px;font-weight:600;color:#1c1c1c;min-width:0;flex-direction:row !important}.solu-po .l .t{white-space:nowrap}.solu-po .save{display:inline-block !important;flex-direction:row !important;background:#ffd84d;color:#1c1c1c;font-size:10.5px;font-weight:800;letter-spacing:.3px;padding:3px 7px;border-radius:5px;white-space:nowrap;line-height:1.45;align-self:center !important}.solu-po .price{display:flex !important;align-items:baseline;gap:7px;white-space:nowrap;font-size:17px;font-weight:800;color:#1c1c1c;flex-shrink:0;align-self:center !important}.solu-po .price s{color:#9a9a9a;font-weight:600;font-size:14px}</style>
