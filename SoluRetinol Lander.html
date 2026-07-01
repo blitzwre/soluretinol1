@@ -131,28 +131,49 @@
 <main>
 <!-- 3. Hero Section -->
 <section class="relative">
-<div class="w-full aspect-square bg-surface-container relative">
+<div class="w-full aspect-[4/3] bg-surface-container relative">
 <img class="w-full h-full object-cover" data-alt="A luxurious, high-end editorial product shot of two elegant frosted glass serum bottles with gold droppers. One bottle represents day-time with a sun icon, and the other night-time with a moon icon. They are placed on a clean, minimalist stone surface in a sun-drenched, high-key bathroom setting with soft shadows. The lighting is warm and golden, highlighting the fluid textures and creating a serene spa atmosphere consistent with a premium skincare brand." src="assets/lander-hero.png"/>
-
 </div>
-<div class="px-container-padding pt-8 relative z-10 text-center pb-section-gap-mobile">
-<div class="flex justify-center gap-1 mb-3">
-<span class="material-symbols-outlined text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
+<!-- Above-the-fold buy block (PDP) -->
+<div class="px-container-padding pt-5 relative z-10 pb-8 max-w-md mx-auto">
+<h1 class="font-display-hero text-3xl leading-tight text-primary mb-1">SoluRetinol Day &amp; Night System</h1>
+<p class="text-rose font-label-bold text-caption uppercase tracking-widest mb-3">Visibly younger skin in 12 days</p>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-rose text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-rose text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-rose text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-rose text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-rose text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-label-bold text-caption mb-4 text-on-surface-variant uppercase tracking-widest">4.7/5 FROM 192 REVIEWS</p>
-<h1 class="font-display-hero text-display-hero mb-4 text-primary uppercase">
-                    VISIBLY YOUNGER SKIN IN 12 DAYS
-                </h1>
-<p class="font-body-lg text-body-lg mb-8 text-on-surface-variant max-w-sm mx-auto">
-                    No injections. No downtime. Just smarter skincare.
-                </p>
-<a class="inline-block bg-primary text-on-primary font-label-bold py-4 px-10 rounded-full shadow-lg hover:opacity-90 active:scale-95 transition-all" href="SoluRetinol%20Product.html?v=3">
-                    SHOP SOLURETINOL
-                </a>
+<a href="#reviews" class="text-caption text-on-surface-variant font-label-bold underline-offset-2 hover:underline">4.7 · 192 verified reviews</a>
+</div>
+<div class="flex items-baseline flex-wrap gap-x-2 gap-y-1 mb-1">
+<span id="solu-price" class="text-3xl font-display-hero text-primary">$59</span>
+<span id="solu-compare" class="text-body-md text-on-surface-variant line-through"></span>
+<span class="text-rose font-label-bold text-caption">Subscribe &amp; Save → $53</span>
+</div>
+<p class="text-caption text-on-surface-variant mb-4">Day &amp; Night serum pair · one 30-day supply</p>
+<div class="flex flex-col gap-2.5 mb-4" id="solu-tiers">
+<button type="button" data-g="0" data-price="$59" data-compare="" data-sticky="$59" class="solu-tier solu-tier-on flex items-center justify-between w-full text-left rounded-2xl px-4 py-3">
+<span class="flex items-center gap-2"><span class="font-bold">1 Pair</span></span>
+<span class="font-bold whitespace-nowrap">$59</span>
+</button>
+<button type="button" data-g="1" data-price="$98" data-compare="$118" data-sticky="$98" class="solu-tier flex items-center justify-between w-full text-left rounded-2xl px-4 py-3">
+<span class="flex items-center gap-2"><span class="font-bold">2 Pairs</span><span class="text-[11px] font-label-bold uppercase tracking-wide text-rose bg-tertiary-fixed rounded-full px-2 py-0.5">Save $20</span></span>
+<span class="whitespace-nowrap"><span class="text-on-surface-variant line-through text-caption mr-1">$118</span><span class="font-bold">$98</span></span>
+</button>
+<button type="button" data-g="2" data-price="$129" data-compare="$177" data-sticky="$129" class="solu-tier flex items-center justify-between w-full text-left rounded-2xl px-4 py-3">
+<span class="flex items-center gap-2"><span class="font-bold">3 Pairs</span><span class="text-[11px] font-label-bold uppercase tracking-wide text-on-primary bg-rose rounded-full px-2 py-0.5" style="background:#BF232A">Best value</span></span>
+<span class="whitespace-nowrap"><span class="text-on-surface-variant line-through text-caption mr-1">$177</span><span class="font-bold">$129</span></span>
+</button>
+</div>
+<button type="button" class="solu-atc-btn w-full font-display-hero text-headline-md text-white py-4 rounded-full shadow-lg active:scale-95 transition-all" style="background:#BF232A">ADD TO CART</button>
+<div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 mt-4 text-caption text-on-surface-variant">
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">lock</span>Secure checkout</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">verified_user</span>60-day guarantee</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">local_shipping</span>Free shipping $75+</span>
+</div>
 </div>
 </section>
 <!-- 4. Problem/Promise Section -->
@@ -276,7 +297,7 @@
 </div>
 </section>
 <!-- 9. Reviews Section -->
-<section class="py-section-gap-mobile px-container-padding bg-surface-container overflow-hidden">
+<section id="reviews" class="py-section-gap-mobile px-container-padding bg-surface-container overflow-hidden">
 <h3 class="font-display-hero text-headline-md text-center mb-8">VERIFIED RESULTS</h3>
 <div class="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
 <!-- Review Card 1 -->
@@ -320,26 +341,7 @@
 </div>
 </div>
 </section>
-<!-- 11. Final CTA -->
-<section class="bg-surface py-section-gap-mobile px-container-padding" id="shop">
-<div class="bg-surface-container-lowest p-6 rounded-[32px] shadow-2xl border border-secondary-fixed-dim relative overflow-hidden">
-<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-bl-full"></div>
-<div class="relative z-10">
-<img class="w-full aspect-[4/3] object-contain rounded-2xl mb-8 shadow-sm bg-white" data-alt="A close-up, studio product display of the SoluRetinol Day and Night serum system bottles in a pristine, luxury spa-like setting. The amber and clear glass bottles glow with internal light, placed on a white marble slab surrounded by soft, blurred morning light. The composition is artistic and premium, emphasizing the medical-grade quality and high-end design of the brand." src="assets/solusinglepair.png"/>
-<h3 class="font-display-hero text-headline-lg mb-4 text-center">Try SoluRetinol Risk-Free for 60 Days</h3>
-<div class="flex flex-col gap-2 items-center mb-8">
-<div class="text-headline-lg text-primary">$59</div>
-<div class="text-rose font-label-bold text-caption px-3 py-1 bg-tertiary-fixed rounded-full">
-                            SUBSCRIBE &amp; SAVE, ONLY $53
-                        </div>
-</div>
-<a href="SoluRetinol%20Product.html?v=3" class="block text-center w-full bg-primary text-on-primary font-display-hero text-headline-md py-5 rounded-full hover:bg-secondary transition-colors active:scale-95 shadow-lg mb-4">
-                        SHOP NOW
-                    </a>
-<p class="text-center text-caption text-on-surface-variant">Over 50,000 satisfied customers worldwide.</p>
-</div>
-</div>
-</section>
+<!-- Final CTA removed on PDP conversion: buy box moved above the fold + sticky ATC handles persistent buy access -->
 </main>
 <!-- 12. Footer -->
 <footer class="bg-surface-container-low px-container-padding py-12 flex flex-col items-center gap-base text-center border-t border-outline-variant">
@@ -369,4 +371,50 @@
     </style>
 <script>
     </script>
+<style id="solu-pdp-css">
+#solu-tiers .solu-tier{border:2px solid #e6e0d7;background:#fff;transition:all .15s}
+#solu-tiers .solu-tier.solu-tier-on{border-color:#BF232A;background:#fff5f5;box-shadow:0 2px 10px rgba(191,35,42,.10)}
+#solu-sticky{transition:transform .25s ease}
+@media (max-width:767px){body{padding-bottom:78px}}
+</style>
+<div id="solu-sticky" class="fixed bottom-0 left-0 w-full z-40 border-t border-[#ececec] px-4 py-2.5 flex items-center gap-3 md:hidden" style="background:rgba(255,255,255,.97);backdrop-filter:blur(6px)">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2"><span id="solu-sticky-price" class="font-bold text-primary text-body-lg">$59</span><span class="text-caption text-rose font-label-bold">60-day guarantee</span></div>
+<div class="text-caption text-on-surface-variant leading-tight truncate">SoluRetinol Day &amp; Night System</div>
+</div>
+<button type="button" class="solu-atc-btn text-white font-label-bold px-6 py-3 rounded-full whitespace-nowrap active:scale-95" style="background:#BF232A">ADD TO CART</button>
+</div>
+<script id="solu-pdp-js">
+(function(){
+  var tiers=[].slice.call(document.querySelectorAll('#solu-tiers .solu-tier'));
+  var price=document.getElementById('solu-price');
+  var comp=document.getElementById('solu-compare');
+  var sp=document.getElementById('solu-sticky-price');
+  tiers.forEach(function(t){
+    t.addEventListener('click',function(){
+      tiers.forEach(function(x){x.classList.remove('solu-tier-on');});
+      t.classList.add('solu-tier-on');
+      var p=t.getAttribute('data-price'), c=t.getAttribute('data-compare');
+      if(price) price.textContent=p;
+      if(comp) comp.textContent=c||'';
+      if(sp) sp.textContent=t.getAttribute('data-sticky')||p;
+    });
+  });
+  var atcs=[].slice.call(document.querySelectorAll('.solu-atc-btn'));
+  atcs.forEach(function(b){
+    b.addEventListener('click',function(){
+      if(b.getAttribute('data-busy'))return;
+      var o=b.textContent; b.setAttribute('data-busy','1'); b.textContent='✓ ADDED TO CART';
+      setTimeout(function(){b.textContent=o;b.removeAttribute('data-busy');},1600);
+    });
+  });
+  var sticky=document.getElementById('solu-sticky');
+  if(sticky && atcs[0] && 'IntersectionObserver' in window){
+    sticky.style.transform='translateY(120%)';
+    new IntersectionObserver(function(es){
+      sticky.style.transform = es[0].isIntersecting ? 'translateY(120%)' : 'translateY(0)';
+    },{threshold:0}).observe(atcs[0]);
+  }
+})();
+</script>
 </body></html><style id=solu-lockx-css>.hide-scrollbar,.snap-x,.overflow-x-auto{touch-action:pan-x !important;overscroll-behavior-x:contain}</style><style id=solu-logo-css>img[src*="soluwellnesslgoo"]{height:34px !important;width:auto !important;max-width:62vw !important;min-width:0 !important;object-fit:contain !important;aspect-ratio:auto !important}</style>
