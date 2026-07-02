@@ -446,13 +446,9 @@
       window.location.href='SoluRetinol%20Product.html?v=3&pack='+selectedPack();
     });
   });
+  // SOP: keep the buy button pinned on mobile at all times (persistent sticky ATC).
   var sticky=document.getElementById('solu-sticky');
-  if(sticky && atcs[0] && 'IntersectionObserver' in window){
-    sticky.style.transform='translateY(120%)';
-    new IntersectionObserver(function(es){
-      sticky.style.transform = es[0].isIntersecting ? 'translateY(120%)' : 'translateY(0)';
-    },{threshold:0}).observe(atcs[0]);
-  }
+  if(sticky){ sticky.style.transform='translateY(0)'; }
 })();
 </script>
 </body></html><style id=solu-lockx-css>.hide-scrollbar,.snap-x,.overflow-x-auto{touch-action:pan-x !important;overscroll-behavior-x:contain}</style><style id=solu-logo-css>img[src*="soluwellnesslgoo"]{height:34px !important;width:auto !important;max-width:62vw !important;min-width:0 !important;object-fit:contain !important;aspect-ratio:auto !important}</style>

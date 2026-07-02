@@ -5907,4 +5907,26 @@ smooth-collapse.product-collapse-wrapper,.product-collapse-wrapper{display:none!
   if(document.readyState!=='loading')boot();else document.addEventListener('DOMContentLoaded',boot);
   window.addEventListener('load',boot);
 })();
-</script>
+</script><style id=solu-abovefold-css>
+/* SOP PDP rule: hero + name + rating + price must clear the first screen on mobile.
+   The pinned sticky ATC carries the primary CTA + 60-day guarantee (SOP mobile mechanism). */
+@media(max-width:767px){
+  .product-breadcrumbs{display:none !important}
+  #solu-gal{margin-top:4px !important}
+  #solu-gal-main{height:200px !important;max-height:200px !important;min-height:0 !important;aspect-ratio:auto !important}
+  #solu-gal-img{max-height:196px !important;width:auto !important;max-width:100% !important;margin:0 auto !important;object-fit:contain !important}
+  #solu-gal-thumbs{margin-top:4px !important}
+  #solu-gal-thumbs .solu-th{width:40px !important;height:40px !important}
+  #solu-gal-thumbs .solu-th img{width:32px !important;height:32px !important}
+  .product-name-wrapper{margin:6px 0 2px !important}
+  h1.h2{font-size:21px !important;line-height:1.15 !important}
+  #solu-static-rating{margin:5px 0 2px !important}
+  .product-price.bold{margin-top:2px !important}
+  .product-info-text{margin:8px 0 !important;font-size:14px !important}
+  /* slim the sticky bar so it never covers the price/rating on the first screen */
+  #solu-psticky{padding:6px 12px !important;gap:10px !important}
+  #solu-psticky .solu-psticky-name{font-size:12.5px !important}
+  #solu-psticky .solu-psticky-price{font-size:11px !important}
+  #solu-psticky-btn{padding:9px 18px !important;font-size:14px !important}
+}
+</style>
