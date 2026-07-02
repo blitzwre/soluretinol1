@@ -389,9 +389,17 @@
 <a class="text-on-surface-variant font-label-bold hover:text-secondary transition-colors uppercase tracking-widest text-caption" href="SoluRetinol%20Product.html?v=3#reviews">Reviews</a>
 <a class="text-on-surface-variant font-label-bold hover:text-secondary transition-colors uppercase tracking-widest text-caption" href="contact.html">Contact</a>
 </nav>
+<nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-4 text-caption">
+<a class="text-on-surface-variant hover:text-secondary underline-offset-2 hover:underline" href="privacy.html">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary underline-offset-2 hover:underline" href="terms.html">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-secondary underline-offset-2 hover:underline" href="refund.html">Refund Policy</a>
+<a class="text-on-surface-variant hover:text-secondary underline-offset-2 hover:underline" href="shipping.html">Shipping</a>
+</nav>
 <p class="text-caption text-on-surface-variant max-w-xs leading-relaxed">
-            © 2026 SoluRetinol by SoluWellness LLC. All Rights Reserved.<br/>
-<span class="mt-4 inline-block">Privacy Policy • Terms of Service</span>
+            © 2026 SoluRetinol by SoluWellness LLC. All Rights Reserved.
+</p>
+<p class="text-[11px] text-on-surface-variant/80 max-w-sm leading-relaxed mt-3">
+            For external cosmetic use only. Individual results may vary. Not intended to diagnose, treat, cure, or prevent any disease. Consult a physician before use if pregnant, nursing, or under a doctor's care.
 </p>
 </footer>
 <style>
@@ -430,11 +438,12 @@
     });
   });
   var atcs=[].slice.call(document.querySelectorAll('.solu-atc-btn'));
+  function selectedPack(){var on=document.querySelector('#solu-tiers .solu-tier-on');return on?(parseInt(on.getAttribute('data-g'),10)+1):1;}
   atcs.forEach(function(b){
     b.addEventListener('click',function(){
       if(b.getAttribute('data-busy'))return;
-      var o=b.textContent; b.setAttribute('data-busy','1'); b.textContent='✓ ADDED TO CART';
-      setTimeout(function(){b.textContent=o;b.removeAttribute('data-busy');},1600);
+      b.setAttribute('data-busy','1'); b.textContent='Taking you to checkout…';
+      window.location.href='SoluRetinol%20Product.html?v=3&pack='+selectedPack();
     });
   });
   var sticky=document.getElementById('solu-sticky');
