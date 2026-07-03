@@ -5990,3 +5990,15 @@ smooth-collapse.product-collapse-wrapper,.product-collapse-wrapper{display:none!
 #shopify-section-template--18148350689444__custom_collapsible_content_8pQE4Y .section--block{margin-top:-38px !important;}
 #shopify-section-template--18148350689444__custom_collapsible_content_8pQE4Y .faq-block{padding-top:20px !important;}
 </style>
+<script id=solu-htu-js>
+(function(){
+  var SEC='shopify-section-template--18148350689444__custom_collapsible_content_8pQE4Y';
+  function collapseAll(){
+    var sec=document.getElementById(SEC); if(!sec) return;
+    sec.querySelectorAll('details[open]').forEach(function(d){ d.removeAttribute('open'); });
+  }
+  function boot(){ collapseAll(); setTimeout(collapseAll,300); setTimeout(collapseAll,1000); }
+  if(document.readyState!=='loading') boot(); else document.addEventListener('DOMContentLoaded',boot);
+  window.addEventListener('load',boot);
+})();
+</script>
