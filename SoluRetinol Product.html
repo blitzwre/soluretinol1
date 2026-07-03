@@ -2177,7 +2177,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img src="assets/tcard-1.png">
+ <img class="solu-ba-img" src="assets/review-ba-1.png">
  </div>
  
 <div class=testimonial-content> 
@@ -2220,7 +2220,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img src="assets/tcard-2.png">
+ <img class="solu-ba-img" src="assets/review-ba-2.png">
  </div>
  
 <div class=testimonial-content> 
@@ -2263,7 +2263,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img src="assets/tcard-3.png">
+ <img class="solu-ba-img" src="assets/review-ba-3.png">
  </div>
  
 <div class=testimonial-content> 
@@ -4423,7 +4423,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img src="assets/tcard-1.png">
+ <img class="solu-ba-img" src="assets/review-ba-1.png">
  </div>
  
 <div class=testimonial-content> 
@@ -4466,7 +4466,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img src="assets/tcard-2.png">
+ <img class="solu-ba-img" src="assets/review-ba-2.png">
  </div>
  
 <div class=testimonial-content> 
@@ -4509,7 +4509,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img src="assets/tcard-3.png">
+ <img class="solu-ba-img" src="assets/review-ba-3.png">
  </div>
  
 <div class=testimonial-content> 
@@ -6015,4 +6015,11 @@ smooth-collapse.product-collapse-wrapper,.product-collapse-wrapper{display:none!
 #solu-gal-thumbs .solu-th.active{width:50px !important;height:6px !important;background:#1c1c1c !important;border:0 !important}
 /* Carousels: lock to horizontal only so vertical page scroll is never hijacked (no scroll-stuck) */
 .grid-carousel,.grid-carousel--pseudo-prev-next,.product-media-carousel,.grid-carousel-item{touch-action:pan-y !important}
+</style>
+<style id=solu-ba-css>
+/* Review carousel: real before/after close-ups (replacing AI photos), with Before/After labels */
+.testimonial-img:has(.solu-ba-img){position:relative}
+.solu-ba-img{width:100% !important;aspect-ratio:3/2 !important;object-fit:cover !important;display:block !important;border-radius:12px 12px 0 0}
+.testimonial-img:has(.solu-ba-img)::before{content:"BEFORE";position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.62);color:#fff;font:800 10px/1 Figtree,system-ui,sans-serif;letter-spacing:.09em;padding:5px 8px;border-radius:5px;z-index:3}
+.testimonial-img:has(.solu-ba-img)::after{content:"AFTER";position:absolute;right:10px;bottom:10px;background:rgba(28,28,28,.88);color:#fff;font:800 10px/1 Figtree,system-ui,sans-serif;letter-spacing:.09em;padding:5px 8px;border-radius:5px;z-index:3}
 </style>
