@@ -3121,6 +3121,7 @@ window.addEventListener('load',run);
 (function(){
 var MSGS=['FREE U.S. SHIPPING OVER $100','FAST, TRACKED SHIPPING','60-DAY MONEY-BACK GUARANTEE'];
 function run(){
+  return; /* announcement bar removed per request */
   if(document.getElementById('solu-announce')) return;
   var bar=document.createElement('div'); bar.id='solu-announce';
   var sp=document.createElement('span'); sp.textContent=MSGS[0]; bar.appendChild(sp);
@@ -5367,6 +5368,7 @@ window.addEventListener('load',run);
 (function(){
 var MSGS=['FREE U.S. SHIPPING OVER $100','FAST, TRACKED SHIPPING','60-DAY MONEY-BACK GUARANTEE'];
 function run(){
+  return; /* announcement bar removed per request */
   if(document.getElementById('solu-announce')) return;
   var bar=document.createElement('div'); bar.id='solu-announce';
   var sp=document.createElement('span'); sp.textContent=MSGS[0]; bar.appendChild(sp);
