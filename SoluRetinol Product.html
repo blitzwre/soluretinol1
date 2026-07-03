@@ -6007,3 +6007,12 @@ smooth-collapse.product-collapse-wrapper,.product-collapse-wrapper{display:none!
 #shopify-section-template--18148350689444__custom_collapsible_content_CmEVg4{display:none !important;}
 #shopify-section-template--18148350689444__1715808421279ebe06{display:none !important;}
 </style>
+<style id=solu-galbars-css>
+/* Gallery thumbnails -> slim horizontal bar indicators (save vertical space); click still switches the main image */
+#solu-gal-thumbs{gap:7px !important;margin-top:12px !important;justify-content:center !important;align-items:center !important}
+#solu-gal-thumbs .solu-th{width:34px !important;height:6px !important;padding:0 !important;border:0 !important;border-radius:3px !important;background:#d6cfc4 !important;flex:0 0 auto !important;overflow:hidden !important;transition:background .2s,width .2s}
+#solu-gal-thumbs .solu-th img{display:none !important}
+#solu-gal-thumbs .solu-th.active{width:50px !important;height:6px !important;background:#1c1c1c !important;border:0 !important}
+/* Carousels: lock to horizontal only so vertical page scroll is never hijacked (no scroll-stuck) */
+.grid-carousel,.grid-carousel--pseudo-prev-next,.product-media-carousel,.grid-carousel-item{touch-action:pan-y !important}
+</style>
