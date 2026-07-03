@@ -2177,7 +2177,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img class="solu-ba-img" src="assets/review-ba-1.png">
+ <img class="solu-ba-img solu-ba-lbl" src="assets/review-ba-1.png">
  </div>
  
 <div class=testimonial-content> 
@@ -2220,7 +2220,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img class="solu-ba-img" src="assets/review-ba-2.png">
+ <img class="solu-real-img" src="assets/real-ba-dayface.webp">
  </div>
  
 <div class=testimonial-content> 
@@ -2263,7 +2263,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img class="solu-ba-img" src="assets/review-ba-3.png">
+ <img class="solu-ba-img solu-ba-lbl" src="assets/review-gen-1.png">
  </div>
  
 <div class=testimonial-content> 
@@ -4426,7 +4426,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img class="solu-ba-img" src="assets/review-ba-1.png">
+ <img class="solu-ba-img solu-ba-lbl" src="assets/review-ba-1.png">
  </div>
  
 <div class=testimonial-content> 
@@ -4469,7 +4469,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img class="solu-ba-img" src="assets/review-ba-2.png">
+ <img class="solu-real-img" src="assets/real-ba-dayface.webp">
  </div>
  
 <div class=testimonial-content> 
@@ -4512,7 +4512,7 @@ At skin temperature, Thermal Fusion technology transforms the serum from a liqui
  
  
  <div class=testimonial-img> 
- <img class="solu-ba-img" src="assets/review-ba-3.png">
+ <img class="solu-ba-img solu-ba-lbl" src="assets/review-gen-1.png">
  </div>
  
 <div class=testimonial-content> 
@@ -6023,11 +6023,13 @@ smooth-collapse.product-collapse-wrapper,.product-collapse-wrapper{display:none!
 .grid-carousel,.grid-carousel--pseudo-prev-next,.product-media-carousel,.grid-carousel-item{touch-action:pan-y !important}
 </style>
 <style id=solu-ba-css>
-/* Review carousel: real before/after close-ups (replacing AI photos), with Before/After labels */
-.testimonial-img:has(.solu-ba-img){position:relative}
-.solu-ba-img{width:100% !important;aspect-ratio:3/2 !important;object-fit:cover !important;display:block !important;border-radius:12px 12px 0 0}
-.testimonial-img:has(.solu-ba-img)::before{content:"BEFORE";position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.62);color:#fff;font:800 10px/1 Figtree,system-ui,sans-serif;letter-spacing:.09em;padding:5px 8px;border-radius:5px;z-index:3}
-.testimonial-img:has(.solu-ba-img)::after{content:"AFTER";position:absolute;right:10px;bottom:10px;background:rgba(28,28,28,.88);color:#fff;font:800 10px/1 Figtree,system-ui,sans-serif;letter-spacing:.09em;padding:5px 8px;border-radius:5px;z-index:3}
+/* Review carousel: real/authentic before/after photos. .solu-ba-lbl images get BEFORE/AFTER overlays; the real Day1/Day20 image already has baked labels so it gets none. */
+.solu-ba-img,.solu-real-img{width:100% !important;object-fit:cover !important;display:block !important;border-radius:12px 12px 0 0}
+.solu-ba-img{aspect-ratio:16/9 !important}
+.solu-real-img{aspect-ratio:2048/1085 !important}
+.testimonial-img:has(.solu-ba-lbl){position:relative}
+.testimonial-img:has(.solu-ba-lbl)::before{content:"BEFORE";position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.62);color:#fff;font:800 10px/1 Figtree,system-ui,sans-serif;letter-spacing:.09em;padding:5px 8px;border-radius:5px;z-index:3}
+.testimonial-img:has(.solu-ba-lbl)::after{content:"AFTER";position:absolute;right:10px;bottom:10px;background:rgba(28,28,28,.88);color:#fff;font:800 10px/1 Figtree,system-ui,sans-serif;letter-spacing:.09em;padding:5px 8px;border-radius:5px;z-index:3}
 /* Drop the AI-looking garden testimonial (tcard-4) */
 .grid-carousel-item:has(img[src*="tcard-4"]){display:none !important}
 </style>
