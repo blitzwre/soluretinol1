@@ -3110,6 +3110,8 @@ window.addEventListener('load',run);
 </script>
 <style id="solu-fixes2">#solu-header{position:static !important;top:auto !important}.info-badge.sale-badge{display:none !important}.sticky.top-0{position:static !important}</style>
 <style id="solu-announce-css">
+/* Top announcement bar removed entirely (both the custom rotator and the theme's native bar) */
+announcement-bar,.announcement-bar,.announcement-bar-section,.utility-bar{display:none !important}
 #solu-announce{background:#37302a;color:#fbf3e7;text-align:center;font-family:Figtree,system-ui,sans-serif;font-weight:600;font-size:14px;letter-spacing:.03em;padding:10px 12px;min-height:40px;display:flex;align-items:center;justify-content:center}
 #solu-announce span{transition:opacity .4s ease}
 
@@ -5357,6 +5359,8 @@ window.addEventListener('load',run);
 </script>
 <style id="solu-fixes2">#solu-header{position:static !important;top:auto !important}.info-badge.sale-badge{display:none !important}.sticky.top-0{position:static !important}</style>
 <style id="solu-announce-css">
+/* Top announcement bar removed entirely (both the custom rotator and the theme's native bar) */
+announcement-bar,.announcement-bar,.announcement-bar-section,.utility-bar{display:none !important}
 #solu-announce{background:#37302a;color:#fbf3e7;text-align:center;font-family:Figtree,system-ui,sans-serif;font-weight:600;font-size:14px;letter-spacing:.03em;padding:10px 12px;min-height:40px;display:flex;align-items:center;justify-content:center}
 #solu-announce span{transition:opacity .4s ease}
 
@@ -6024,4 +6028,6 @@ smooth-collapse.product-collapse-wrapper,.product-collapse-wrapper{display:none!
 .solu-ba-img{width:100% !important;aspect-ratio:3/2 !important;object-fit:cover !important;display:block !important;border-radius:12px 12px 0 0}
 .testimonial-img:has(.solu-ba-img)::before{content:"BEFORE";position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.62);color:#fff;font:800 10px/1 Figtree,system-ui,sans-serif;letter-spacing:.09em;padding:5px 8px;border-radius:5px;z-index:3}
 .testimonial-img:has(.solu-ba-img)::after{content:"AFTER";position:absolute;right:10px;bottom:10px;background:rgba(28,28,28,.88);color:#fff;font:800 10px/1 Figtree,system-ui,sans-serif;letter-spacing:.09em;padding:5px 8px;border-radius:5px;z-index:3}
+/* Drop the AI-looking garden testimonial (tcard-4) */
+.grid-carousel-item:has(img[src*="tcard-4"]){display:none !important}
 </style>
