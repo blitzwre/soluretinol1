@@ -5860,7 +5860,7 @@ smooth-collapse.product-collapse-wrapper,.product-collapse-wrapper{display:none!
 #solu-psticky-btn{background:#1c1c1c;color:#fff;font-weight:700;letter-spacing:.02em;border:0;border-radius:999px;padding:12px 22px;white-space:nowrap;cursor:pointer;font-family:inherit}
 #solu-psticky-btn:active{transform:scale(.96)}
 @media(min-width:768px){#solu-psticky{display:none}}
-@media(max-width:767px){body{padding-bottom:70px}}
+@media(max-width:767px){body{padding-bottom:52px}}
 </style>
 <script id=solu-psticky-js>
 (function(){var b=document.getElementById('solu-psticky-btn');if(!b)return;b.addEventListener('click',function(){var a=document.querySelector('.button-add-to-cart');if(a){a.scrollIntoView({behavior:'smooth',block:'center'});try{var box=a.closest('.buy-buttons')||a;box.animate([{boxShadow:'0 0 0 0 rgba(191,35,42,.5)'},{boxShadow:'0 0 0 12px rgba(191,35,42,0)'}],{duration:750});}catch(e){}}});})();
@@ -6002,3 +6002,8 @@ smooth-collapse.product-collapse-wrapper,.product-collapse-wrapper{display:none!
   window.addEventListener('load',boot);
 })();
 </script>
+<style id=solu-bottom-css>
+/* Bottom of page: remove the teal secondary accordion + empty "You may also like" so the footer is the last thing */
+#shopify-section-template--18148350689444__custom_collapsible_content_CmEVg4{display:none !important;}
+#shopify-section-template--18148350689444__1715808421279ebe06{display:none !important;}
+</style>
