@@ -328,7 +328,7 @@ body .yotpo-review-title,{font-family:var(--font-body-family);font-style:var(--f
  
  
  
- <span>FREE U.S. SHIPPING OVER $75</span>
+ <span>FREE U.S. SHIPPING OVER $100</span>
  
  
  
@@ -3076,8 +3076,8 @@ function run(){
       var atc=btns.filter(function(b){return /add to cart/i.test((b.textContent||''))})[0];
       if(atc){
         var po=el('<div class="solu-po"><h4>Choose your supply</h4>'
-          +'<label class="sel" data-g="0"><span class="l"><span class="dot"></span><span class="t">1 Pair</span></span><span class="price">$59.00</span><input type="radio" name="solupo" checked></label>'
-          +'<label data-g="1"><span class="l"><span class="dot"></span><span class="t">2 Pairs</span><span class="save">SAVE $20</span></span><span class="price">$98.00<s>$118.00</s></span><input type="radio" name="solupo"></label>' +'<label data-g="2"><span class="l"><span class="dot"></span><span class="t">3 Pairs</span><span class="save">SAVE $48</span></span><span class="price">$129.00<s>$177.00</s></span><input type="radio" name="solupo"></label>'
+          +'<label class="sel" data-g="0"><span class="l"><span class="dot"></span><span class="t">1 Pair</span><span class="save">SAVE $10</span></span><span class="price">$59.00<s>$69.00</s></span><input type="radio" name="solupo" checked></label>'
+          +'<label data-g="1"><span class="l"><span class="dot"></span><span class="t">2 Pairs</span><span class="save">SAVE $30</span></span><span class="price">$100.00<s>$130.00</s></span><input type="radio" name="solupo"></label>' +'<label data-g="2"><span class="l"><span class="dot"></span><span class="t">3 Pairs</span><span class="save">SAVE $59</span></span><span class="price">$120.00<s>$179.00</s></span><input type="radio" name="solupo"></label>'
           +'</div>');
         var form=atc.closest('form')||atc.parentNode;
         form.parentNode.insertBefore(po, form);
@@ -3119,7 +3119,7 @@ window.addEventListener('load',run);
 </style>
 <script id="solu-announce-js">
 (function(){
-var MSGS=['FREE U.S. SHIPPING OVER $75','FAST, TRACKED SHIPPING','60-DAY MONEY-BACK GUARANTEE','AFTERPAY AVAILABLE'];
+var MSGS=['FREE U.S. SHIPPING OVER $100','FAST, TRACKED SHIPPING','60-DAY MONEY-BACK GUARANTEE'];
 function run(){
   if(document.getElementById('solu-announce')) return;
   var bar=document.createElement('div'); bar.id='solu-announce';
@@ -5322,8 +5322,8 @@ function run(){
       var atc=btns.filter(function(b){return /add to cart/i.test((b.textContent||''))})[0];
       if(atc){
         var po=el('<div class="solu-po"><h4>Choose your supply</h4>'
-          +'<label class="sel" data-g="0"><span class="l"><span class="dot"></span><span class="t">1 Pair</span></span><span class="price">$59.00</span><input type="radio" name="solupo" checked></label>'
-          +'<label data-g="1"><span class="l"><span class="dot"></span><span class="t">2 Pairs</span><span class="save">SAVE $20</span></span><span class="price">$98.00<s>$118.00</s></span><input type="radio" name="solupo"></label>' +'<label data-g="2"><span class="l"><span class="dot"></span><span class="t">3 Pairs</span><span class="save">SAVE $48</span></span><span class="price">$129.00<s>$177.00</s></span><input type="radio" name="solupo"></label>'
+          +'<label class="sel" data-g="0"><span class="l"><span class="dot"></span><span class="t">1 Pair</span><span class="save">SAVE $10</span></span><span class="price">$59.00<s>$69.00</s></span><input type="radio" name="solupo" checked></label>'
+          +'<label data-g="1"><span class="l"><span class="dot"></span><span class="t">2 Pairs</span><span class="save">SAVE $30</span></span><span class="price">$100.00<s>$130.00</s></span><input type="radio" name="solupo"></label>' +'<label data-g="2"><span class="l"><span class="dot"></span><span class="t">3 Pairs</span><span class="save">SAVE $59</span></span><span class="price">$120.00<s>$179.00</s></span><input type="radio" name="solupo"></label>'
           +'</div>');
         var form=atc.closest('form')||atc.parentNode;
         form.parentNode.insertBefore(po, form);
@@ -5365,7 +5365,7 @@ window.addEventListener('load',run);
 </style>
 <script id="solu-announce-js">
 (function(){
-var MSGS=['FREE U.S. SHIPPING OVER $75','FAST, TRACKED SHIPPING','60-DAY MONEY-BACK GUARANTEE','AFTERPAY AVAILABLE'];
+var MSGS=['FREE U.S. SHIPPING OVER $100','FAST, TRACKED SHIPPING','60-DAY MONEY-BACK GUARANTEE'];
 function run(){
   if(document.getElementById('solu-announce')) return;
   var bar=document.createElement('div'); bar.id='solu-announce';
