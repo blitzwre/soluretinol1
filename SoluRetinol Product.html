@@ -6031,3 +6031,42 @@ smooth-collapse.product-collapse-wrapper,.product-collapse-wrapper{display:none!
 /* Drop the AI-looking garden testimonial (tcard-4) */
 .grid-carousel-item:has(img[src*="tcard-4"]){display:none !important}
 </style>
+<style id=solu-qtymove-css>
+/* Quantity stepper relocated onto the "Choose your supply" heading row to save vertical space */
+.solu-po h4 .qty-selector-wrapper{border:1px solid #e3e3e3 !important;border-radius:999px !important;background:#fff !important;margin:0 !important;padding:2px 4px !important;flex:0 0 auto !important;width:auto !important;display:inline-flex !important;align-items:center}
+.solu-po h4 .qty-selector-wrapper label{display:none !important}
+.solu-po h4 qty-selector{padding:0 !important;margin:0 !important}
+.solu-po h4 qty-selector input{display:block !important;width:40px !important;min-width:40px !important;opacity:1 !important;text-align:center !important;height:36px !important;font-weight:700}
+.solu-po h4 qty-selector button{width:30px !important;height:36px !important;flex:0 0 auto !important}
+</style>
+<script id=solu-qtymove-js>
+(function(){
+  function move(){
+    var h4=[].slice.call(document.querySelectorAll('.solu-po h4')).filter(function(e){return /choose your supply/i.test(e.textContent||'');})[0];
+    if(!h4) return false;
+    var wrapper=document.querySelector('.qty-selector-wrapper');
+    if(!wrapper) return false;
+    if(h4.contains(wrapper)) return true;
+    h4.style.display='flex'; h4.style.alignItems='center'; h4.style.justifyContent='space-between'; h4.style.gap='12px'; h4.style.marginBottom='12px';
+    h4.appendChild(wrapper);
+    var instock=document.querySelector('.product-stock-info');
+    if(instock){ instock.style.marginTop='4px'; instock.style.marginBottom='10px'; }
+    // Wire the stepper (theme handler doesn't hydrate in this static export)
+    var qs=wrapper.querySelector('qty-selector');
+    var inp=qs&&qs.querySelector('input');
+    var btns=qs?[].slice.call(qs.querySelectorAll('button')):[];
+    if(inp&&btns.length===2&&!qs.__soluWired){
+      qs.__soluWired=1;
+      var mn=parseInt(inp.getAttribute('min')||'1',10)||1;
+      function set(v){ v=Math.max(mn,v); inp.value=v; inp.dispatchEvent(new Event('input',{bubbles:true})); inp.dispatchEvent(new Event('change',{bubbles:true})); }
+      btns[0].type='button'; btns[1].type='button';
+      btns[0].addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set((parseInt(inp.value,10)||mn)-1);},true);
+      btns[1].addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set((parseInt(inp.value,10)||mn)+1);},true);
+    }
+    return true;
+  }
+  function boot(){ if(!move()){ setTimeout(move,300); setTimeout(move,900); setTimeout(move,1800); } }
+  if(document.readyState!=='loading') boot(); else document.addEventListener('DOMContentLoaded',boot);
+  window.addEventListener('load',boot);
+})();
+</script>
