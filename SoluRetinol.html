@@ -123,7 +123,7 @@
 <div class="flex-none" style="width:24px"></div>
 <a href="SoluRetinol.html" class="flex-1 flex justify-center min-w-0"><img src="assets/soluwellnesslgoo.webp" alt="SoluWellness" style="height:34px;width:auto;max-width:260px;object-fit:contain"></a>
 <div class="flex items-center gap-4 flex-none">
-<a href="SoluRetinol%20Product.html?v=3" aria-label="Cart" class="flex items-center">
+<a href="https://www.soluwellness.com/" aria-label="Cart" class="flex items-center">
 <svg viewBox="0 0 20 20" fill="none" style="width:24px;height:24px;display:block" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1H3.19322C3.93237 1 4.57749 1.65843 4.76088 2.59777L7.38978 16.1263H16.388M7.32178 13.4801L17.114 12.189C17.5562 12.1315 17.9249 11.7186 18.0384 11.1543L18.9638 6.56742C19.1434 5.67936 18.6324 4.8084 17.9323 4.8084H5.56794M8.45815 17.5635C8.45815 18.3563 7.96848 19 7.3634 19C6.7583 19 6.26771 18.3563 6.26771 17.5635C6.26771 16.7695 6.7583 16.1257 7.3634 16.1257C7.96848 16.1257 8.45815 16.7695 8.45815 17.5635ZM17.5673 17.5635C17.5673 18.3563 17.0767 19 16.4716 19C15.8675 19 15.3769 18.3563 15.3769 17.5635C15.3769 16.7695 15.8675 16.1257 16.4716 16.1257C17.0767 16.1257 17.5673 16.7695 17.5673 17.5635Z"></path></svg>
 </a>
 </div>
@@ -131,14 +131,23 @@
 <main>
 <!-- 3. Hero Section -->
 <section class="relative">
-<div class="w-full aspect-[4/3] bg-surface-container relative">
-<img class="w-full h-full object-cover" data-alt="A luxurious, high-end editorial product shot of two elegant frosted glass serum bottles with gold droppers. One bottle represents day-time with a sun icon, and the other night-time with a moon icon. They are placed on a clean, minimalist stone surface in a sun-drenched, high-key bathroom setting with soft shadows. The lighting is warm and golden, highlighting the fluid textures and creating a serene spa atmosphere consistent with a premium skincare brand." src="assets/lander-hero.png"/>
+<div class="w-full bg-white relative">
+<div id="solu-hero-carousel" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar" style="touch-action:pan-x pan-y;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch">
+<div class="flex-none w-full snap-center" style="scroll-snap-stop:always"><img class="w-full object-contain" style="height:300px" src="assets/solusinglepair.png" alt="SoluRetinol Day &amp; Night serum pair"/></div>
+<div class="flex-none w-full snap-center" style="scroll-snap-stop:always"><img class="w-full object-contain" style="height:300px" src="assets/soludoublepair.png" alt="SoluRetinol 2-pair bundle"/></div>
+<div class="flex-none w-full snap-center" style="scroll-snap-stop:always"><img class="w-full object-contain" style="height:300px" src="assets/solutriplepair.png" alt="SoluRetinol 3-pair bundle"/></div>
+</div>
+<div id="solu-hero-bars" class="flex justify-center items-center gap-1.5 pt-4 pb-1 bg-white relative z-10">
+<button type="button" class="solu-hbar solu-hbar-on" data-i="0" aria-label="View image 1"></button>
+<button type="button" class="solu-hbar" data-i="1" aria-label="View image 2"></button>
+<button type="button" class="solu-hbar" data-i="2" aria-label="View image 3"></button>
+</div>
 </div>
 <!-- Above-the-fold buy block (PDP) -->
 <div class="px-container-padding pt-5 relative z-10 pb-8 max-w-md mx-auto">
 <h1 class="font-display-hero text-3xl leading-tight text-primary mb-1">SoluRetinol Day &amp; Night System</h1>
-<p class="text-rose font-label-bold text-caption uppercase tracking-widest mb-3">Visibly younger skin in 12 days</p>
-<div class="flex items-center gap-2 mb-4">
+<p class="text-rose font-label-bold text-caption uppercase tracking-widest mb-2">Visibly younger skin in 12 days</p>
+<div class="flex items-center gap-2 mb-2">
 <div class="flex gap-0.5">
 <span class="material-symbols-outlined text-rose text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined text-rose text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -148,12 +157,17 @@
 </div>
 <a href="#reviews" class="text-caption text-on-surface-variant font-label-bold underline-offset-2 hover:underline">4.7 · 192 verified reviews</a>
 </div>
-<div class="flex items-baseline flex-wrap gap-x-2 gap-y-1 mb-1">
+<div class="flex items-baseline gap-2 mb-3">
 <span id="solu-price" class="text-3xl font-display-hero text-primary">$59</span>
-<span id="solu-compare" class="text-body-md text-on-surface-variant line-through"></span>
-<span class="text-rose font-label-bold text-caption">Subscribe &amp; Save → $53</span>
+<span id="solu-compare" class="text-body-lg text-on-surface-variant line-through">$69</span>
 </div>
-<p class="text-caption text-on-surface-variant mb-4">Day &amp; Night serum pair · one 30-day supply</p>
+<ul class="flex flex-col gap-1.5 mb-4">
+<li class="flex items-start gap-2 text-body-md text-on-surface"><span class="material-symbols-outlined text-primary text-[19px] leading-none" style="font-variation-settings:'FILL' 1;">check_circle</span>Visible results in 12 days</li>
+<li class="flex items-start gap-2 text-body-md text-on-surface"><span class="material-symbols-outlined text-primary text-[19px] leading-none" style="font-variation-settings:'FILL' 1;">check_circle</span>Visibly softens fine lines &amp; wrinkles</li>
+<li class="flex items-start gap-2 text-body-md text-on-surface"><span class="material-symbols-outlined text-primary text-[19px] leading-none" style="font-variation-settings:'FILL' 1;">check_circle</span>Deeply hydrates &amp; renews skin</li>
+<li class="flex items-start gap-2 text-body-md text-on-surface"><span class="material-symbols-outlined text-primary text-[19px] leading-none" style="font-variation-settings:'FILL' 1;">check_circle</span>Dermatologist tested</li>
+<li class="flex items-start gap-2 text-body-md text-on-surface"><span class="material-symbols-outlined text-primary text-[19px] leading-none" style="font-variation-settings:'FILL' 1;">check_circle</span>Powered by R3a deep delivery</li>
+</ul>
 <div class="flex flex-col gap-2.5 mb-4" id="solu-tiers">
 <button type="button" data-g="0" data-price="$59" data-compare="$69" data-sticky="$59" class="solu-tier solu-tier-on flex items-center justify-between w-full text-left rounded-2xl px-4 py-3">
 <span class="flex items-center gap-2"><span class="font-bold">1 Pair</span><span class="text-[11px] font-label-bold uppercase tracking-wide text-rose bg-tertiary-fixed rounded-full px-2 py-0.5">Save $10</span></span>
@@ -169,11 +183,6 @@
 </button>
 </div>
 <button type="button" class="solu-atc-btn w-full font-display-hero text-headline-md text-white py-4 rounded-full shadow-lg active:scale-95 transition-all" style="background:#1c1c1c">ADD TO CART</button>
-<div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 mt-4 text-caption text-on-surface-variant">
-<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">lock</span>Secure checkout</span>
-<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">verified_user</span>60-day guarantee</span>
-<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">local_shipping</span>Free shipping $100+</span>
-</div>
 </div>
 </section>
 <!-- 4. Problem/Promise Section -->
@@ -239,28 +248,11 @@
 </div>
 </div>
 </section>
-<!-- 6. Before/After Section -->
-<section class="bg-surface py-section-gap-mobile px-container-padding">
-<div class="bg-surface-container-lowest rounded-3xl shadow-xl overflow-hidden border border-outline-variant">
-<div class="relative w-full aspect-video">
-<img class="w-full h-full object-cover" data-alt="A clean, scientific split-screen comparison showing a high-resolution close-up of a woman's eye area. The left side labeled 'Before' shows fine lines and texture, while the right side labeled 'After' shows noticeably smoother, firmer skin with improved elasticity. The image is shot in bright, neutral clinical lighting on a soft cream background, maintaining the brand's sophisticated and authoritative medical-grade aesthetic." src="assets/before-after-eye.png"/>
-<div class="absolute top-4 left-4 bg-primary/80 backdrop-blur-sm text-on-primary text-caption font-label-bold px-3 py-1 rounded-full">BEFORE</div>
-<div class="absolute top-4 right-4 bg-secondary/80 backdrop-blur-sm text-on-secondary text-caption font-label-bold px-3 py-1 rounded-full">AFTER</div>
-</div>
-<div class="p-card-padding text-center">
-<h3 class="font-display-hero text-headline-md mb-2">Smoother, firmer skin in as little as 12 days.</h3>
-<p class="font-body-md text-on-surface-variant mb-6">Visible improvements in texture and the appearance of fine lines.</p>
-<a href="SoluRetinol%20Product.html?v=3" class="block text-center w-full py-4 border border-primary rounded-full font-label-bold hover:bg-primary hover:text-on-primary transition-colors">
-                        SEE THE RESULTS
-                    </a>
-</div>
-</div>
-</section>
 <!-- 7. Benefits Checklist -->
-<section class="py-section-gap-mobile px-container-padding bg-surface-container-lowest">
+<section class="py-8 px-container-padding bg-surface-container-lowest">
 <div class="max-w-sm mx-auto">
-<h3 class="font-display-hero text-headline-md text-center mb-8">WHY DERMATOLOGISTS RECOMMEND US</h3>
-<ul class="space-y-6">
+<h3 class="font-display-hero text-headline-md text-center mb-6">WHY DERMATOLOGISTS RECOMMEND US</h3>
+<ul class="space-y-3">
 <li class="flex items-start gap-4">
 <div class="mt-1 flex-shrink-0 w-6 h-6 bg-secondary-container rounded-full flex items-center justify-center">
 <span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
@@ -296,32 +288,32 @@
 </section>
 <!-- 8. Results Timeline -->
 <section class="py-section-gap-mobile px-container-padding bg-cream">
-<h3 class="font-display-hero text-headline-md text-center mb-10">YOUR SKIN JOURNEY</h3>
-<div class="relative pl-8 border-l-2 border-secondary/30 ml-4 space-y-12">
+<h3 class="font-display-hero text-headline-md text-center mb-8">YOUR SKIN JOURNEY</h3>
+<div class="relative pl-8 border-l-2 border-outline-variant ml-4 space-y-9 max-w-md mx-auto">
 <div class="relative">
-<div class="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-secondary ring-4 ring-cream"></div>
-<p class="font-label-bold text-rose text-caption mb-1">WEEK 1-2</p>
-<h4 class="font-headline-md text-body-lg font-bold mb-2">Immediate Glow</h4>
-<p class="text-body-md text-on-surface-variant">Skin surface texture softens. Dead skin cells are gently exfoliated to reveal a brighter, more hydrated base layer.</p>
+<div class="absolute -left-[41px] top-0.5 w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-white"></div>
+<p class="font-label-bold text-rose text-caption tracking-widest mb-1">WEEK 1-2</p>
+<h4 class="font-headline-md text-body-lg font-bold mb-1.5">Immediate Glow</h4>
+<p class="text-body-md text-on-surface-variant leading-relaxed">Skin surface texture softens. Dead skin cells are gently exfoliated to reveal a brighter, more hydrated base layer.</p>
 </div>
 <div class="relative">
-<div class="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-secondary/60 ring-4 ring-cream"></div>
-<p class="font-label-bold text-rose text-caption mb-1">WEEK 3-6</p>
-<h4 class="font-headline-md text-body-lg font-bold mb-2">Deep Repair</h4>
-<p class="text-body-md text-on-surface-variant">Collagen production kicks into high gear. Visible reduction in fine lines and dark spots as skin elasticity improves.</p>
+<div class="absolute -left-[41px] top-0.5 w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-white"></div>
+<p class="font-label-bold text-rose text-caption tracking-widest mb-1">WEEK 3-6</p>
+<h4 class="font-headline-md text-body-lg font-bold mb-1.5">Deep Repair</h4>
+<p class="text-body-md text-on-surface-variant leading-relaxed">Collagen production kicks into high gear. Visible reduction in fine lines and dark spots as skin elasticity improves.</p>
 </div>
 <div class="relative">
-<div class="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-secondary/30 ring-4 ring-cream"></div>
-<p class="font-label-bold text-rose text-caption mb-1">WEEK 7-12</p>
-<h4 class="font-headline-md text-body-lg font-bold mb-2">Maximum Results</h4>
-<p class="text-body-md text-on-surface-variant">Long-term cellular health. Deep wrinkles look visibly diminished and the skin barrier feels stronger and more resilient.</p>
+<div class="absolute -left-[41px] top-0.5 w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-white"></div>
+<p class="font-label-bold text-rose text-caption tracking-widest mb-1">WEEK 7-12</p>
+<h4 class="font-headline-md text-body-lg font-bold mb-1.5">Maximum Results</h4>
+<p class="text-body-md text-on-surface-variant leading-relaxed">Long-term cellular health. Deep wrinkles look visibly diminished and the skin barrier feels stronger and more resilient.</p>
 </div>
 </div>
 </section>
 <!-- 9. Reviews Section -->
 <section id="reviews" class="py-section-gap-mobile px-container-padding bg-surface-container overflow-hidden">
 <h3 class="font-display-hero text-headline-md text-center mb-8">VERIFIED RESULTS</h3>
-<div class="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
+<div id="solu-reviews-carousel" class="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
 <!-- Review Card 1 -->
 <div class="flex-none w-[280px] snap-center bg-surface-container-lowest p-6 rounded-3xl shadow-soft">
 <div class="relative rounded-2xl overflow-hidden mb-4">
@@ -337,16 +329,16 @@
 <span class="material-symbols-outlined text-[18px] text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined text-[18px] text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-body-md text-on-surface mb-4 leading-snug">"I was nervous to try retinol because everything else made me peel. This one never did, just smoother, calmer skin. By week two my makeup went on flawlessly."</p>
-<p class="font-label-bold text-caption text-secondary">Karen B. <span class="font-body-md text-on-surface-variant font-normal">| Verified Buyer</span></p>
+<p class="font-bold text-body-md text-on-surface mb-2">Smoother skin, softer lines</p>
+<p class="font-body-md text-on-surface mb-4 leading-snug">"I'm 56 and the lines on my cheeks and around my eyes had really deepened over the years. After a couple of months using it morning and night, my skin looks visibly smoother and feels firmer to the touch. Hands down the best I've tried."</p>
+<p class="font-label-bold text-caption text-secondary">Diane N. <span class="font-body-md text-on-surface-variant font-normal">| Verified Buyer</span></p>
 </div>
 <!-- Review Card 2 -->
 <div class="flex-none w-[280px] snap-center bg-surface-container-lowest p-6 rounded-3xl shadow-soft">
 <div class="relative rounded-2xl overflow-hidden mb-4">
-<img class="w-full aspect-[3/2] object-cover" src="assets/review-ba-2.png" alt="Before and after: reduced fine lines"/>
+<img class="w-full aspect-[3/2] object-cover" src="assets/real-ba-dayface.webp" alt="Real customer before and after, Day 1 vs Day 20"/>
 <span class="absolute top-2 left-2 bg-black/70 text-white text-[10px] font-label-bold uppercase tracking-widest px-2 py-0.5 rounded">Before</span>
 <span class="absolute top-2 right-2 bg-black/70 text-white text-[10px] font-label-bold uppercase tracking-widest px-2 py-0.5 rounded">After</span>
-<span class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-white/50"></span>
 </div>
 <div class="flex gap-0.5 mb-2">
 <span class="material-symbols-outlined text-[18px] text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -355,13 +347,14 @@
 <span class="material-symbols-outlined text-[18px] text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined text-[18px] text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-body-md text-on-surface mb-4 leading-snug">"The crepey skin under my eyes has visibly tightened and friends keep asking what I changed. I am 58 and I haven't felt this confident about my skin in years."</p>
-<p class="font-label-bold text-caption text-secondary">Linda M. <span class="font-body-md text-on-surface-variant font-normal">| Verified Buyer</span></p>
+<p class="font-bold text-body-md text-on-surface mb-2">Visible results fast</p>
+<p class="font-body-md text-on-surface mb-4 leading-snug">"After three weeks I could already see changes, especially on my neck. The lines around my eyes look softer and my skin feels firmer. I would challenge anyone on the fence to give it a try; you will see a difference within weeks."</p>
+<p class="font-label-bold text-caption text-secondary">Ann A. <span class="font-body-md text-on-surface-variant font-normal">| Verified Buyer</span></p>
 </div>
 <!-- Review Card 3 -->
 <div class="flex-none w-[280px] snap-center bg-surface-container-lowest p-6 rounded-3xl shadow-soft">
 <div class="relative rounded-2xl overflow-hidden mb-4">
-<img class="w-full aspect-[3/2] object-cover" src="assets/review-ba-3.png" alt="Before and after: smoother crow's feet"/>
+<img class="w-full aspect-[3/2] object-cover" src="assets/review-smile-ba.png" alt="Before and after: softened smile lines"/>
 <span class="absolute top-2 left-2 bg-black/70 text-white text-[10px] font-label-bold uppercase tracking-widest px-2 py-0.5 rounded">Before</span>
 <span class="absolute top-2 right-2 bg-black/70 text-white text-[10px] font-label-bold uppercase tracking-widest px-2 py-0.5 rounded">After</span>
 <span class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-white/50"></span>
@@ -373,34 +366,54 @@
 <span class="material-symbols-outlined text-[18px] text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined text-[18px] text-rose" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-body-md text-on-surface mb-4 leading-snug">"Day serum every morning, night serum before bed, that simple. My cheeks feel firmer, my fine lines have softened, and I finally have a routine that actually works."</p>
-<p class="font-label-bold text-caption text-secondary">Patricia S. <span class="font-body-md text-on-surface-variant font-normal">| Verified Buyer</span></p>
+<p class="font-bold text-body-md text-on-surface mb-2">My smile lines softened</p>
+<p class="font-body-md text-on-surface mb-4 leading-snug">"I'm 52 and the lines around my mouth and the rough, uneven patches on my cheeks made me look tired all the time. A couple of months in, my skin is noticeably smoother and more even. I keep getting asked what I changed."</p>
+<p class="font-label-bold text-caption text-secondary">Denise F. <span class="font-body-md text-on-surface-variant font-normal">| Verified Buyer</span></p>
 </div>
 </div>
 </section>
-<!-- Final CTA removed on PDP conversion: buy box moved above the fold + sticky ATC handles persistent buy access -->
+<!-- FAQ (SOP: objection handling + ingredients) -->
+<section class="py-section-gap-mobile px-container-padding bg-surface-container-lowest">
+<div class="max-w-md mx-auto">
+<h3 class="font-display-hero text-headline-md text-center mb-6">FREQUENTLY ASKED QUESTIONS</h3>
+<div class="flex flex-col gap-2" id="solu-faq">
+<details class="group bg-white rounded-2xl border border-[#ececec] px-4 py-3">
+<summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-bold text-body-md">Will it irritate sensitive skin?<span class="material-symbols-outlined text-[20px] shrink-0 transition-transform group-open:rotate-45">add</span></summary>
+<p class="text-body-md text-on-surface-variant mt-2">Our retinol is water-soluble, so it absorbs without the flaking, redness, or peeling of traditional retinol. It is gentle enough for sensitive skin and first-time retinol users.</p>
+</details>
+<details class="group bg-white rounded-2xl border border-[#ececec] px-4 py-3">
+<summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-bold text-body-md">How soon will I see results?<span class="material-symbols-outlined text-[20px] shrink-0 transition-transform group-open:rotate-45">add</span></summary>
+<p class="text-body-md text-on-surface-variant mt-2">Skin feels smoother and more hydrated within the first 1 to 2 weeks. Fine lines begin softening around weeks 3 to 6, with deeper wrinkles visibly diminished by weeks 7 to 12. Most people see a visible difference in about 12 days.</p>
+</details>
+<details class="group bg-white rounded-2xl border border-[#ececec] px-4 py-3">
+<summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-bold text-body-md">How do I use the day and night serums?<span class="material-symbols-outlined text-[20px] shrink-0 transition-transform group-open:rotate-45">add</span></summary>
+<p class="text-body-md text-on-surface-variant mt-2">Smooth a pea-sized drop of the Day serum over clean skin each morning before moisturizer and SPF. Apply the Night serum before bed. That is the whole routine.</p>
+</details>
+<details class="group bg-white rounded-2xl border border-[#ececec] px-4 py-3">
+<summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-bold text-body-md">What is in it?<span class="material-symbols-outlined text-[20px] shrink-0 transition-transform group-open:rotate-45">add</span></summary>
+<p class="text-body-md text-on-surface-variant mt-2">Solubilized Retinol Palmitate, large-molecule Hyaluronic Acid, Vitamin C, and Niacinamide in an all-natural moisturizing base. Cruelty-free, paraben-free, and sulfate-free.</p>
+</details>
+<details class="group bg-white rounded-2xl border border-[#ececec] px-4 py-3">
+<summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-bold text-body-md">What if it does not work for me?<span class="material-symbols-outlined text-[20px] shrink-0 transition-transform group-open:rotate-45">add</span></summary>
+<p class="text-body-md text-on-surface-variant mt-2">You are covered by our 60-day money-back guarantee. If you are not happy with your results, send it back for a full refund.</p>
+</details>
+</div>
+</div>
+</section>
 </main>
+<style id=solu-faq-css>#solu-faq summary::-webkit-details-marker{display:none}</style>
 <!-- 12. Footer -->
-<footer class="bg-surface-container-low px-container-padding py-12 flex flex-col items-center gap-base text-center border-t border-outline-variant">
-<div class="font-display-hero text-headline-md text-primary mb-6">SoluRetinol</div>
-<nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-10">
-<a class="text-on-surface-variant font-label-bold hover:text-secondary transition-colors uppercase tracking-widest text-caption" href="SoluRetinol%20Product.html?v=3">Shop All</a>
-<a class="text-on-surface-variant font-label-bold hover:text-secondary transition-colors uppercase tracking-widest text-caption" href="SoluRetinol%20Product.html?v=3">Our Science</a>
-<a class="text-on-surface-variant font-label-bold hover:text-secondary transition-colors uppercase tracking-widest text-caption" href="SoluRetinol%20Product.html?v=3#reviews">Reviews</a>
-<a class="text-on-surface-variant font-label-bold hover:text-secondary transition-colors uppercase tracking-widest text-caption" href="contact.html">Contact</a>
+<footer class="bg-surface-container-low px-container-padding py-7 flex flex-col items-center text-center border-t border-outline-variant">
+<nav class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[11px] text-on-surface-variant mb-3">
+<a class="hover:text-primary hover:underline underline-offset-2" href="privacy.html">Privacy Policy</a>
+<span class="text-outline-variant" aria-hidden="true">·</span>
+<a class="hover:text-primary hover:underline underline-offset-2" href="terms.html">Terms</a>
+<span class="text-outline-variant" aria-hidden="true">·</span>
+<a class="hover:text-primary hover:underline underline-offset-2" href="refund.html">Refunds</a>
+<span class="text-outline-variant" aria-hidden="true">·</span>
+<a class="hover:text-primary hover:underline underline-offset-2" href="contact.html">Contact</a>
 </nav>
-<nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-4 text-caption">
-<a class="text-on-surface-variant hover:text-secondary underline-offset-2 hover:underline" href="privacy.html">Privacy Policy</a>
-<a class="text-on-surface-variant hover:text-secondary underline-offset-2 hover:underline" href="terms.html">Terms of Service</a>
-<a class="text-on-surface-variant hover:text-secondary underline-offset-2 hover:underline" href="refund.html">Refund Policy</a>
-<a class="text-on-surface-variant hover:text-secondary underline-offset-2 hover:underline" href="shipping.html">Shipping</a>
-</nav>
-<p class="text-caption text-on-surface-variant max-w-xs leading-relaxed">
-            © 2026 SoluRetinol by SoluWellness LLC. All Rights Reserved.
-</p>
-<p class="text-[11px] text-on-surface-variant/80 max-w-sm leading-relaxed mt-3">
-            For external cosmetic use only. Individual results may vary. Not intended to diagnose, treat, cure, or prevent any disease. Consult a physician before use if pregnant, nursing, or under a doctor's care.
-</p>
+<p class="text-[11px] text-on-surface-variant/70">© 2026 SoluWellness LLC · Individual results may vary.</p>
 </footer>
 <style>
         .hide-scrollbar::-webkit-scrollbar { display: none; }
@@ -416,8 +429,7 @@
 </style>
 <div id="solu-sticky" class="fixed bottom-0 left-0 w-full z-40 border-t border-[#ececec] px-4 py-2.5 flex items-center gap-3 md:hidden" style="background:rgba(255,255,255,.97);backdrop-filter:blur(6px)">
 <div class="flex-1 min-w-0">
-<div class="flex items-center gap-2"><span id="solu-sticky-price" class="font-bold text-primary text-body-lg">$59</span><span class="text-caption text-rose font-label-bold">60-day guarantee</span></div>
-<div class="text-caption text-on-surface-variant leading-tight truncate">SoluRetinol Day &amp; Night System</div>
+<span id="solu-sticky-price" class="font-bold text-primary text-2xl">$59</span>
 </div>
 <button type="button" class="solu-atc-btn text-white font-label-bold px-6 py-3 rounded-full whitespace-nowrap active:scale-95" style="background:#1c1c1c">ADD TO CART</button>
 </div>
@@ -443,7 +455,8 @@
     b.addEventListener('click',function(){
       if(b.getAttribute('data-busy'))return;
       b.setAttribute('data-busy','1'); b.textContent='Taking you to checkout…';
-      window.location.href='SoluRetinol%20Product.html?v=3&pack='+selectedPack();
+      // Straight into the live CheckoutChamp purchase funnel (same hand-off as PDP 1)
+      window.location.href='https://www.soluwellness.com/';
     });
   });
   // SOP: keep the buy button pinned on mobile at all times (persistent sticky ATC).
@@ -451,4 +464,143 @@
   if(sticky){ sticky.style.transform='translateY(0)'; }
 })();
 </script>
-</body></html><style id=solu-lockx-css>.hide-scrollbar,.snap-x,.overflow-x-auto{touch-action:pan-x !important;overscroll-behavior-x:contain}</style><style id=solu-logo-css>img[src*="soluwellnesslgoo"]{height:34px !important;width:auto !important;max-width:62vw !important;min-width:0 !important;object-fit:contain !important;aspect-ratio:auto !important}</style>
+</body></html><style id=solu-lockx-css>.hide-scrollbar,.snap-x,.overflow-x-auto{touch-action:pan-y !important;overscroll-behavior-x:contain}#solu-hero-carousel,#solu-reviews-carousel{overflow-x:hidden !important;scroll-snap-type:none !important;cursor:grab}#solu-hero-carousel.solu-drag,#solu-reviews-carousel.solu-drag{cursor:grabbing}</style><style id=solu-logo-css>img[src*="soluwellnesslgoo"]{height:34px !important;width:auto !important;max-width:62vw !important;min-width:0 !important;object-fit:contain !important;aspect-ratio:auto !important}</style><style id=solu-p2fold-css>
+/* PDP 2 above-the-fold density (mobile): shrink the hero to a cinematic band and tighten the
+   title/section padding so the tier selector clears the sticky ADD TO CART bar instead of being
+   bisected by it. SOP above-fold: hero, name, promise, rating+count, price+offer, CTA, guarantee. */
+@media(max-width:767px){
+  main h1{font-size:25px !important;line-height:1.15 !important}
+  /* Content block sits below the carousel + bar indicators in clean flow (bars separate title from image) */
+  main section.relative > div[class*="pt-5"]{padding-top:6px !important;padding-bottom:14px !important}
+}
+/* SEE THE RESULTS scrolls to the buy box; offset so the sticky header doesn't cover the tiers */
+#solu-tiers{scroll-margin-top:84px}
+/* Hero carousel bar indicators (match PDP 1's slim-bar gallery) */
+#solu-hero-bars .solu-hbar{width:26px;height:5px;border:0;padding:0;border-radius:3px;background:rgba(28,28,28,.28);cursor:pointer;transition:width .2s,background .2s}
+#solu-hero-bars .solu-hbar.solu-hbar-on{width:38px;background:#1c1c1c}
+#solu-hero-carousel img{display:block}
+</style>
+<script id=solu-hero-js>
+(function(){
+  var car=document.getElementById('solu-hero-carousel');
+  var bars=[].slice.call(document.querySelectorAll('#solu-hero-bars .solu-hbar'));
+  if(!car||!bars.length) return;
+  function setActive(i){ bars.forEach(function(b,n){ b.classList.toggle('solu-hbar-on', n===i); }); }
+  var raf;
+  car.addEventListener('scroll',function(){
+    if(raf) cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(function(){
+      var i=Math.round(car.scrollLeft/car.clientWidth);
+      setActive(Math.max(0,Math.min(bars.length-1,i)));
+    });
+  },{passive:true});
+  bars.forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=parseInt(b.getAttribute('data-i'),10)||0;
+      car.scrollTo({left:i*car.clientWidth, behavior:'smooth'});
+      setActive(i);
+    });
+  });
+})();
+</script>
+<script id=solu-pager-js>
+/* Force every horizontal carousel to advance exactly ONE item per swipe/drag.
+   Native scroll is disabled (overflow-x:hidden via CSS); we drive scrollLeft from a
+   pointer-drag handler and clamp the target to the current index +/- 1, so a hard fling
+   can never free-scroll past the next slide. Works for touch, mouse, and pen. */
+(function(){
+  function pageify(car){
+    if(!car) return;
+    var items=[].slice.call(car.children).filter(function(n){return n.nodeType===1;});
+    if(items.length<2) return;
+    car.querySelectorAll('img').forEach(function(im){ im.setAttribute('draggable','false'); });
+    function maxSL(){ return Math.max(0, car.scrollWidth - car.clientWidth); }
+    function nearest(){
+      var best=0,bd=Infinity;
+      for(var k=0;k<items.length;k++){ var d=Math.abs(items[k].offsetLeft-car.scrollLeft); if(d<bd){bd=d;best=k;} }
+      return best;
+    }
+    function anim(target){
+      target=Math.max(0,Math.min(target,maxSL()));
+      var start=car.scrollLeft, dist=target-start, t0=null, dur=300;
+      if(Math.abs(dist)<1){ car.scrollLeft=target; return; }
+      function step(ts){ if(t0===null)t0=ts; var p=Math.min(1,(ts-t0)/dur);
+        var e=p<0.5?2*p*p:1-Math.pow(-2*p+2,2)/2; car.scrollLeft=start+dist*e;
+        if(p<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    }
+    function goto(i){ i=Math.max(0,Math.min(items.length-1,i)); anim(items[i].offsetLeft); }
+    var down=false,startX=0,startY=0,startSL=0,startIdx=0,pid=null,decided=false,horiz=false;
+    car.addEventListener('pointerdown',function(e){
+      if(e.button&&e.button!==0) return;
+      down=true; decided=false; horiz=false;
+      startX=e.clientX; startY=e.clientY; startSL=car.scrollLeft; startIdx=nearest(); pid=e.pointerId;
+    });
+    car.addEventListener('pointermove',function(e){
+      if(!down) return;
+      var dx=e.clientX-startX, dy=e.clientY-startY;
+      if(!decided){
+        if(Math.abs(dx)<6 && Math.abs(dy)<6) return;        // wait for a real move
+        horiz=Math.abs(dx)>Math.abs(dy); decided=true;       // lock the axis on first intent
+        if(horiz){ car.classList.add('solu-drag'); try{ car.setPointerCapture(pid); }catch(_){} }
+        else { down=false; return; }                         // vertical -> hand back to page scroll
+      }
+      if(horiz) car.scrollLeft=Math.max(0,Math.min(startSL-dx,maxSL()));
+    });
+    function end(e){
+      if(!down) return; down=false; car.classList.remove('solu-drag');
+      try{ car.releasePointerCapture(pid); }catch(_){}
+      if(!horiz) return;                                      // never a horizontal drag -> no paging
+      var dx=(e.clientX||startX)-startX, TH=Math.max(30,car.clientWidth*0.12), dir=0;
+      if(dx<=-TH) dir=1; else if(dx>=TH) dir=-1;
+      goto(startIdx+dir);
+    }
+    car.addEventListener('pointerup',end);
+    car.addEventListener('pointercancel',end);
+  }
+  ['solu-hero-carousel','solu-reviews-carousel'].forEach(function(id){
+    pageify(document.getElementById(id));
+  });
+})();
+</script>
+<script id=solu-linkguard>
+/* Only the two real funnel pages (PDP 1 / PDP 2) + checkout root + in-page anchors stay wired;
+   every other link (dead legal pages, external) is trashed so the header/footer can't jump away. */
+(function(){
+  var OK=['SoluRetinol.html','SoluRetinol%20Product.html','SoluRetinol Product.html'];
+  function ok(href){
+    if(!href) return true;
+    var h=href.split('#')[0];
+    if(h===''||h.charAt(0)==='#') return true;
+    if(/^https?:\/\/(www\.)?soluwellness\.com\/?($|\?)/i.test(h)) return true;
+    return OK.some(function(r){return h.indexOf(r)!==-1;});
+  }
+  function scrub(){
+    document.querySelectorAll('a[href]').forEach(function(a){
+      if(a.dataset.lg) return;
+      if(ok(a.getAttribute('href'))){ a.dataset.lg='ok'; return; }
+      a.dataset.lg='dead'; a.removeAttribute('href'); a.style.cursor='default';
+      a.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();},true);
+    });
+  }
+  if(document.readyState!=='loading') scrub(); else document.addEventListener('DOMContentLoaded',scrub);
+  window.addEventListener('load',scrub); setTimeout(scrub,800); setTimeout(scrub,1800);
+})();
+</script>
+<style id=solu-tighten-css>
+/* SOP tighten: cut section gaps + internal rhythm so there's less scrolling (mobile) */
+@media(max-width:767px){
+  [class~="py-section-gap-mobile"]{padding-top:22px !important;padding-bottom:22px !important}
+  main > section h2,main > section h3{margin-bottom:14px !important}
+  main .grid.gap-6,main .flex.flex-col.gap-6,main .grid-cols-1.gap-6{gap:12px !important}
+  main .space-y-12 > * + *{margin-top:20px !important}
+  main .space-y-6 > * + *{margin-top:12px !important}
+  main .p-card-padding{padding:15px !important}
+  main .mb-10{margin-bottom:16px !important}
+  main .mb-8{margin-bottom:14px !important}
+  main .mb-6{margin-bottom:12px !important}
+  main .pl-8{padding-left:22px !important}
+  main section.py-6{padding-top:18px !important;padding-bottom:18px !important}
+  main section.py-8{padding-top:20px !important;padding-bottom:20px !important}
+}
+</style>
