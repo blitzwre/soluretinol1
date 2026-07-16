@@ -301,6 +301,8 @@ h = remap(h, "listicle.html", {
                                  "A dab of face cream resting on the surface of skin", False),
  "assets/list-r2-needle.png":   ("list-r2-needle-01.png", "listicle / reason 2 hero, cosmetic syringe", "content",
                                  "A single cosmetic syringe on a smooth grey surface", False),
+ "assets/list-r3-lab.png":      ("list-r3-lab-01.png", "listicle / reason 3 hero, laboratory dropper and vial", "content",
+                                 "A dropper releasing serum into a vial on a laboratory bench", False),
  "assets/list-r4-serum.png":    ("list-r4-serum-01.png", "listicle / reason 4 hero, serum drop", "content",
                                  "A single glossy drop of serum with a gel-like texture", False),
  "assets/adv-ba-proof1-r6.jpg": ("adv-proof-01.jpg", "listicle / reason 5 before-after", "content",

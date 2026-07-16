@@ -89,6 +89,9 @@
   .hint{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--muted);margin:24px 0 0}
 
   /* ---- Mechanism diagram ---- */
+  .mechlbl{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+    margin:26px 0 12px;padding-top:20px;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  .mechlbl::before{content:"";flex:0 0 auto;width:22px;height:2px;background:var(--ink)}
   .rdiagram{margin:2px 0 6px}
   .rdiagram svg{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line);border-radius:12px}
   .rdiagram figcaption{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin-top:8px;text-align:center}
@@ -257,16 +260,19 @@
   <!-- ===== SLIDE 4 · REASON 3 ===== -->
   <section class="slide" data-label="Reason 3 of 5" data-sub="The R3a fix">
     <div class="slide-inner">
-      <div class="rhead">
-        <div class="bignum2">3</div>
-        <div class="htx">
-          <span class="ktag2">Reason 03</span>
-          <h3 class="lh">A Colorado lab fixed the one thing everyone ignored</h3>
-        </div>
+      <div class="shero">
+        <img src="images/list-r3-lab-01.jpg" alt="A dropper releasing serum into a vial on a laboratory bench">
+        <span class="ktag">Reason 03</span>
+        <span class="bignum">3</span>
       </div>
-      <div class="gist">Retinol was never the problem. Getting it through the door was.</div>
-      <p>SoluRetinol is built by <strong>SoluWellness</strong>, a Colorado skincare company, around a patent-pending delivery system called <strong>R3a&trade;</strong>. Retinol already works. It is one of the most studied compounds in all of skincare, and nobody is still arguing about it. It just could not get through the barrier.</p>
-      <p>So they shrank it. R3a reduces the retinol to nanometer scale, small enough to pass through instead of resting on top. Same proven active, finally delivered where it can do real structural work.</p>
+      <p class="hcap">A Colorado skincare lab rebuilt retinol around how it is delivered.</p>
+      <div class="rbody">
+        <h3 class="lh">A Colorado lab fixed the one thing everyone ignored</h3>
+        <div class="gist">Retinol was never the problem. Getting it through the door was.</div>
+        <p>SoluRetinol is built by <strong>SoluWellness</strong>, a Colorado skincare company, around a patent-pending delivery system called <strong>R3a&trade;</strong>. Retinol already works. It is one of the most studied compounds in all of skincare, and nobody is still arguing about it. It just could not get through the barrier.</p>
+        <p>So they shrank it. R3a reduces the retinol to nanometer scale, small enough to pass through instead of resting on top. Same proven active, finally delivered where it can do real structural work.</p>
+      </div>
+      <div class="mechlbl">How R3a works</div>
       <figure class="rdiagram">
         <svg viewBox="0 0 600 316" role="img" aria-label="Ordinary retinol stays on the skin surface while R3a delivery reaches the deep layer" xmlns="http://www.w3.org/2000/svg">
           <style>

@@ -59,6 +59,20 @@
       "status": "done"
     },
     {
+      "id": "list-r3-lab-01",
+      "page": "listicle.html",
+      "slot": "listicle / reason 3 hero, laboratory dropper and vial",
+      "role": "content",
+      "alt": "A dropper releasing serum into a vial on a laboratory bench",
+      "target_filename": "list-r3-lab-01.jpg",
+      "width": 1200,
+      "height": 805,
+      "aspect": "1200:805",
+      "transparent": false,
+      "prompt": "Client asset placed in the listicle / reason 3 hero, laboratory dropper and vial slot.",
+      "status": "done"
+    },
+    {
       "id": "list-r4-serum-01",
       "page": "listicle.html",
       "slot": "listicle / reason 4 hero, serum drop",
