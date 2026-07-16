@@ -11,19 +11,19 @@
 <style>
   :root{
     --ink:#161616; --body:#2c2c2c; --muted:#707070; --faint:#9a9a9a;
-    --line:#e7e7e7; --bg:#ffffff; --panel:#f6f6f4; --accent:#161616;
+    --line:#e7e7e7; --bg:#ffffff; --panel:#f4f4f2; --accent:#161616;
     --serif:"Newsreader",Georgia,"Times New Roman",serif;
     --sans:"Rubik",system-ui,-apple-system,sans-serif;
     --wrap:660px; --nav:70px;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--body);font-family:var(--serif);line-height:1.6;font-size:18px;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--body);font-family:var(--serif);line-height:1.58;font-size:18px;overflow-x:hidden}
   img{display:block;max-width:100%;height:auto}
   a{color:inherit}
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
 
-  /* ---- Site masthead ---- */
+  /* ---- Masthead ---- */
   .site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .site-inner{max-width:960px;margin:0 auto;height:52px;padding:0 16px;display:flex;align-items:center;justify-content:center}
   .site .brand{font-family:var(--sans);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:15px;color:var(--ink)}
@@ -33,106 +33,112 @@
   .progress .bar{height:100%;background:var(--ink);width:0;transition:width .4s cubic-bezier(.4,0,.2,1)}
 
   /* ---- Slides ---- */
-  .deck-area .wrap{padding-top:20px;padding-bottom:calc(var(--nav) + 34px)}
+  .deck-area .wrap{padding-top:0;padding-bottom:calc(var(--nav) + 30px)}
   .slide{display:none}
   .slide.active{display:block;animation:sfade .42s ease both}
   .slide.rev{animation:sfadeb .42s ease both}
   @keyframes sfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   @keyframes sfadeb{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
-  .slide-inner{min-height:calc(100dvh - 52px - 3px - var(--nav) - 20px)}
+  .slide-inner{min-height:calc(100dvh - 52px - 3px - var(--nav))}
 
-  /* ---- Article head (cover) ---- */
+  /* ---- Full-bleed image hero ---- */
+  .shero{position:relative;margin:0 -20px;line-height:0;background:#0e0e0e;overflow:hidden}
+  .shero > img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block}
+  .shero::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,0) 32%,rgba(0,0,0,0) 50%,rgba(0,0,0,.80))}
+  .shero .ktag{position:absolute;top:14px;left:16px;z-index:3;font-family:var(--sans);font-size:10px;font-weight:700;
+    letter-spacing:.17em;text-transform:uppercase;color:#fff;background:rgba(18,18,18,.5);backdrop-filter:blur(2px);
+    padding:6px 11px;border-radius:5px;line-height:1}
+  .shero .bignum{position:absolute;left:12px;bottom:-8px;z-index:3;font-family:var(--sans);font-weight:800;font-size:104px;
+    line-height:.78;color:#fff;letter-spacing:-.04em;text-shadow:0 2px 30px rgba(0,0,0,.45)}
+  .shero .cvtitle{position:absolute;left:20px;right:20px;bottom:16px;z-index:3;font-family:var(--sans);font-weight:800;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#fff}
+  .hcap{font-family:var(--sans);font-size:12px;color:var(--muted);line-height:1.5;margin:10px 0 0}
+
+  /* ---- Reason body ---- */
+  .rbody{padding-top:22px}
+  .lh{font-family:var(--serif);font-weight:700;font-size:28px;line-height:1.14;color:var(--ink);margin:0 0 16px;letter-spacing:-.022em;text-wrap:balance}
+  .gist{font-family:var(--sans);font-weight:700;font-size:16.5px;line-height:1.4;color:var(--ink);background:var(--panel);
+    border-left:3px solid var(--ink);border-radius:0 9px 9px 0;padding:14px 16px;margin:0 0 22px}
+  p{margin:0 0 20px;text-wrap:pretty}
+  strong{color:var(--ink);font-weight:600}
+  em{font-style:italic}
+
+  /* ---- Numbered header (mechanism slide) ---- */
+  .rhead{display:flex;align-items:flex-start;gap:14px;margin:26px 0 18px}
+  .rhead .bignum2{font-family:var(--sans);font-weight:800;font-size:66px;line-height:.82;color:var(--ink);letter-spacing:-.04em;flex:0 0 auto}
+  .rhead .htx{padding-top:2px}
+  .rhead .ktag2{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:7px}
+  .rhead .lh{margin:0}
+
+  /* ---- Cover text ---- */
   .cat{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--ink);border-bottom:2px solid var(--ink);padding-bottom:3px;margin:6px 0 11px}
-  h1{font-family:var(--serif);font-weight:700;font-size:31px;line-height:1.14;color:var(--ink);margin:0 0 15px;letter-spacing:-.021em;text-wrap:balance}
-  .deck{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.5;color:#3f3f3f;margin:0 0 24px;text-wrap:pretty}
-
+    color:var(--ink);border-bottom:2px solid var(--ink);padding-bottom:3px;margin:22px 0 12px}
+  h1{font-family:var(--serif);font-weight:700;font-size:33px;line-height:1.1;color:var(--ink);margin:0 0 15px;letter-spacing:-.024em;text-wrap:balance}
+  .deck{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.5;color:#3f3f3f;margin:0 0 22px;text-wrap:pretty}
   .meta{display:flex;align-items:center;gap:12px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:var(--sans)}
-  .avatar{flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;letter-spacing:.02em}
+  .avatar{flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
   .meta .who{flex:1;min-width:0}
   .meta .nm{font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.3}
   .meta .sub{font-size:12px;color:var(--muted);line-height:1.3}
   .share{display:flex;gap:7px}
   .share a{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--muted)}
   .share a svg{width:14px;height:14px}
+  .lede{margin-top:22px}
+  .lede::first-letter{float:left;font-family:var(--serif);font-weight:700;font-size:58px;line-height:.76;padding:8px 10px 0 0;color:var(--ink)}
+  .hint{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--muted);margin:24px 0 0}
 
-  figure{margin:24px 0}
-  figure img{width:100%;border-radius:4px}
-  figcaption{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:9px;line-height:1.5;border-left:2px solid var(--line);padding-left:10px}
-
-  .bafig{margin:24px 0}
-  .baimg{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;line-height:0}
-  .baimg img{width:100%;border-radius:0}
-  .baimg .lbl{position:absolute;bottom:11px;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.62);padding:4px 10px;border-radius:5px;line-height:1.2}
-  .baimg .lbl.b{left:11px}.baimg .lbl.a{right:11px}
-  .bafig figcaption{border-left:0;padding-left:0;margin-top:11px}
-
-  p{margin:0 0 20px;text-wrap:pretty}
-  .lede::first-letter{float:left;font-family:var(--serif);font-weight:700;font-size:60px;line-height:.76;padding:8px 10px 0 0;color:var(--ink)}
-  strong{color:var(--ink);font-weight:600}
-  em{font-style:italic}
-  .hint{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--muted);margin:26px 0 0}
-
-  .pull{position:relative;font-family:var(--serif);padding:2px 4px 2px 52px;margin:30px 0 8px;font-size:20px;line-height:1.45;color:var(--ink);font-style:italic;font-weight:500;border-left:3px solid var(--ink)}
-  .pull::before{content:"\201C";position:absolute;left:16px;top:-6px;font-family:var(--serif);font-style:normal;font-size:64px;line-height:1;color:#d8d8d5;z-index:0;pointer-events:none}
-
-  /* ---- Slide reason header ---- */
-  .rtag{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:2px 0 12px}
-  .lhead{display:grid;grid-template-columns:56px 1fr;column-gap:16px;align-items:center;margin-bottom:18px}
-  .ln{font-family:var(--sans);font-weight:800;font-size:44px;line-height:1;color:var(--ink);width:56px;text-align:center;border-top:3px solid var(--ink);padding-top:11px}
-  .lh{font-family:var(--serif);font-weight:700;font-size:24px;line-height:1.2;color:var(--ink);margin:0;letter-spacing:-.017em;text-wrap:balance}
-  .lb p:last-child{margin-bottom:0}
-
-  .rdiagram{margin:24px 0 6px}
+  /* ---- Mechanism diagram ---- */
+  .rdiagram{margin:2px 0 6px}
   .rdiagram svg{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line);border-radius:12px}
   .rdiagram figcaption{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin-top:8px;text-align:center}
 
+  /* ---- Timeline ---- */
   .timeline{font-family:var(--sans);margin:22px 0 8px;padding:2px 0 0 4px}
   .timeline .row{position:relative;padding:0 0 26px 32px}
   .timeline .row:last-child{padding-bottom:2px}
   .timeline .row::before{content:"";position:absolute;left:6px;top:8px;bottom:-4px;width:2px;background:var(--line)}
   .timeline .row:last-child::before{display:none}
-  .timeline .row::after{content:"";position:absolute;left:0;top:4px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--ink);box-sizing:border-box}
+  .timeline .row::after{content:"";position:absolute;left:0;top:4px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--ink)}
   .timeline .wk{font-weight:800;font-size:11.5px;letter-spacing:.07em;color:var(--ink);text-transform:uppercase;margin-bottom:4px}
   .timeline .tx{font-size:14.5px;color:var(--body);line-height:1.55}
   .timeline .tx b{color:var(--ink)}
 
+  /* ---- Testimonial ---- */
   .tcard{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:22px 0 0;font-family:var(--sans);background:#fff}
   .tcard .body{padding:20px 22px;border-left:3px solid var(--ink)}
   .tcard .stars{color:#d4a017;font-size:14px;letter-spacing:2px;margin-bottom:9px}
   .tcard .q{font-family:var(--serif);font-size:18px;line-height:1.55;color:var(--ink);margin:0 0 14px}
   .tcard .who{display:flex;align-items:center;gap:11px}
-  .tcard .who .av{flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;letter-spacing:.02em}
+  .tcard .who .av{flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
   .tcard .who .nm b{display:block;color:var(--ink);font-weight:700;font-size:13.5px;line-height:1.3}
   .tcard .who .nm span{font-size:11.5px;color:var(--muted)}
 
-  /* ---- Offer slide ---- */
-  .eyebrow{display:flex;align-items:center;gap:11px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:6px 0 8px}
+  /* ---- Offer ---- */
+  .eyebrow{display:flex;align-items:center;gap:11px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:24px 0 8px}
+  .eyebrow.first{margin-top:6px}
   .eyebrow::before{content:"";flex:0 0 auto;width:26px;height:2px;background:var(--ink)}
-  h2{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.2;color:var(--ink);margin:0 0 10px;letter-spacing:-.018em;text-wrap:balance}
-  .reveal{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px 22px;margin:26px 0;text-align:center}
+  h2{font-family:var(--serif);font-weight:600;font-size:25px;line-height:1.18;color:var(--ink);margin:0 0 10px;letter-spacing:-.02em;text-wrap:balance}
+  .reveal{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px 22px;margin:24px 0;text-align:center}
   .reveal img{width:72%;max-width:290px;margin:0 auto 16px}
   .reveal .rname{font-family:var(--sans);font-weight:800;font-size:20px;color:var(--ink);margin-bottom:8px;letter-spacing:-.01em}
   .reveal .rdesc{font-family:var(--sans);font-size:14.5px;color:var(--body);line-height:1.6;margin:0 auto;max-width:440px}
   .price{font-family:var(--sans);text-align:center;margin:22px 0 4px}
-  .price .amt{font-weight:800;font-size:38px;color:var(--ink);letter-spacing:-.02em;line-height:1}
+  .price .amt{font-weight:800;font-size:42px;color:var(--ink);letter-spacing:-.02em;line-height:1}
   .price .sub{font-size:13px;color:var(--muted);margin-top:6px}
-
   .cta{display:block;font-family:var(--sans);text-align:center;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;
     font-size:16px;padding:18px 22px;border-radius:8px;margin:22px 0 6px;box-shadow:0 2px 0 rgba(0,0,0,.22);cursor:pointer;
     transition:transform .15s ease, box-shadow .15s ease}
   .cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.16)}
   .cta:active{transform:translateY(0);box-shadow:0 2px 0 rgba(0,0,0,.22)}
-
-  .faq{margin-top:28px}
+  .faq{margin-top:26px}
   .faq details{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#fff;font-family:var(--sans)}
   .faq summary{list-style:none;cursor:pointer;padding:15px 18px;font-weight:700;font-size:15.5px;color:var(--ink);display:flex;justify-content:space-between;gap:12px;align-items:center}
   .faq summary::-webkit-details-marker{display:none}
   .faq summary .pm{flex:0 0 auto;font-weight:400;font-size:23px;line-height:1;color:var(--muted);transition:transform .18s}
   .faq details[open] summary .pm{transform:rotate(45deg)}
   .faq .ans{padding:0 18px 16px;font-size:14.5px;color:var(--body);line-height:1.6}
-
-  footer{border-top:1px solid var(--line);background:var(--panel);margin:30px -20px 0;padding:20px 22px 26px;font-family:var(--sans)}
+  footer{border-top:1px solid var(--line);background:var(--panel);margin:28px -20px 0;padding:20px 22px 26px;font-family:var(--sans)}
   footer .fbrand{font-weight:700;letter-spacing:.13em;text-transform:uppercase;font-size:10.5px;color:var(--muted);text-align:center}
   footer .links{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;font-size:10.5px;color:var(--muted);margin:11px 0 0;font-weight:500}
   footer .links a{text-decoration:none;padding:0 11px;border-right:1px solid #dcdcd8;line-height:1}
@@ -142,25 +148,20 @@
   /* ---- Slideshow nav ---- */
   .snav{position:fixed;left:0;bottom:0;width:100%;z-index:60;height:var(--nav);background:rgba(255,255,255,.97);backdrop-filter:blur(8px);
     border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 16px}
-  .snav .back{flex:0 0 auto;font-family:var(--sans);font-weight:700;font-size:14px;color:var(--ink);background:#fff;border:1px solid var(--line);
-    border-radius:8px;padding:12px 16px;cursor:pointer;text-decoration:none;user-select:none}
+  .snav .back{flex:0 0 auto;font-family:var(--sans);font-weight:700;font-size:14px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px;cursor:pointer;text-decoration:none;user-select:none}
   .snav .count{flex:1;text-align:center;font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);line-height:1.3}
   .snav .count small{display:block;font-size:9.5px;letter-spacing:.1em;color:var(--faint);margin-top:2px;font-weight:600}
-  .snav .next{flex:0 0 auto;font-family:var(--sans);font-weight:700;font-size:14px;color:#fff;background:var(--ink);border:1px solid var(--ink);
-    border-radius:8px;padding:12px 20px;cursor:pointer;text-decoration:none;user-select:none;box-shadow:0 2px 0 rgba(0,0,0,.2)}
+  .snav .next{flex:0 0 auto;font-family:var(--sans);font-weight:700;font-size:14px;color:#fff;background:var(--ink);border:1px solid var(--ink);border-radius:8px;padding:12px 20px;cursor:pointer;text-decoration:none;user-select:none;box-shadow:0 2px 0 rgba(0,0,0,.2)}
   .snav .next:active{box-shadow:none;transform:translateY(1px)}
   .snav[data-first="1"] .back{visibility:hidden}
   .snav[data-last="1"] .next{display:none}
 
-  @media(min-width:700px){ h1{font-size:40px} .deck{font-size:20px} .lh{font-size:26px} .ln{font-size:50px} }
+  @media(min-width:700px){ h1{font-size:44px} .deck{font-size:20px} .lh{font-size:31px} .shero .bignum{font-size:124px} }
 </style>
 </head>
 <body>
 
-<!-- ============ MASTHEAD ============ -->
-<header class="site">
-  <div class="site-inner"><div class="brand">The Skin Report</div></div>
-</header>
+<header class="site"><div class="site-inner"><div class="brand">The Skin Report</div></div></header>
 <div class="progress"><div class="bar" id="pbar"></div></div>
 
 <main class="deck-area">
@@ -169,9 +170,14 @@
   <!-- ===== SLIDE 1 · COVER ===== -->
   <section class="slide active" data-label="Start here" data-sub="Swipe through 5 reasons">
     <div class="slide-inner">
-      <span class="cat">Anti-Aging</span>
+      <div class="shero">
+        <img src="assets/adv-hero.jpg?v=9" alt="A woman before and after, with brighter, smoother, more radiant skin" width="1655" height="1100">
+        <span class="ktag">Anti-Aging &middot; 5 Reasons</span>
+        <span class="cvtitle">The same woman &middot; 12 weeks apart</span>
+      </div>
+      <span class="cat">The Skin Report</span>
       <h1>5 Reasons Women Over 45 Are Quietly Replacing Injectables With a &ldquo;Topical Filler&rdquo;</h1>
-      <p class="deck">It absorbs where ordinary creams cannot reach, with no needles and no downtime. Here is why the switch is happening so fast.</p>
+      <p class="deck">It absorbs where ordinary creams cannot reach. No needles, no downtime. Here is why the switch is happening so fast.</p>
       <div class="meta">
         <div class="avatar">DK</div>
         <div class="who">
@@ -184,14 +190,7 @@
           <a href="#" aria-label="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></a>
         </div>
       </div>
-      <figure class="bafig">
-        <div class="baimg">
-          <img src="assets/adv-hero.jpg?v=9" alt="A woman before and after, with brighter, smoother, more radiant skin" width="1655" height="1100">
-          <span class="lbl b">Before</span><span class="lbl a">After</span>
-        </div>
-        <figcaption>The same woman, twelve weeks apart. Softer lines, calmer redness, more even tone. Individual results vary; photo for illustration.</figcaption>
-      </figure>
-      <p class="lede">If you have spent years, and a small fortune, on creams that promised to firm and smooth and delivered almost nothing, you are not doing it wrong. You are running into a problem the beauty aisle would rather you not think about too hard. Tap through five reasons a two-step serum called SoluRetinol is quietly pulling women over 45 away from the injectables chair.</p>
+      <p class="lede">If you have spent years, and a small fortune, on creams that promised to firm and smooth and did almost nothing, you are not doing it wrong. You are running into a problem the beauty aisle would rather you not think about. Tap through five reasons a two-step serum called SoluRetinol is pulling women over 45 away from the injectables chair.</p>
       <p class="hint">Tap Next to begin &rarr;</p>
     </div>
   </section>
@@ -199,12 +198,17 @@
   <!-- ===== SLIDE 2 · REASON 1 ===== -->
   <section class="slide" data-label="Reason 1 of 5" data-sub="Why creams fail">
     <div class="slide-inner">
-      <div class="rtag">Reason 01</div>
-      <div class="lhead"><div class="ln">1</div><h3 class="lh">Most anti-aging creams never reach the wrinkle</h3></div>
-      <div class="lb">
-        <p>Here is the part nobody at the counter mentions: wrinkles do not form on the surface. They form in the deeper layer, where collagen breaks down and stops rebuilding the way it used to. That layer is the whole ballgame, and it is the one layer a typical cream never touches.</p>
-        <p>The reason is physical, not marketing. Skin is a barrier before it is anything else, and its entire job is to keep the outside world out. The active molecules in most creams are simply too large to pass through it, so they sit on top, do a little for texture, and rinse away by morning. You are not imagining the lack of results. You are watching a barrier do exactly what it evolved to do.</p>
-        <div class="pull">The problem was never the ingredient. It was that the ingredient could never get deep enough to matter.</div>
+      <div class="shero">
+        <img src="assets/list-r1-cream.png" alt="A dab of face cream resting on the surface of skin">
+        <span class="ktag">Reason 01</span>
+        <span class="bignum">1</span>
+      </div>
+      <p class="hcap">Most of what you apply never gets past the surface.</p>
+      <div class="rbody">
+        <h3 class="lh">Most creams never reach the wrinkle</h3>
+        <div class="gist">The problem was never your cream. Nothing you buy gets deep enough to matter.</div>
+        <p>Wrinkles do not form on the surface. They form in the deeper layer, where collagen breaks down and stops rebuilding, and that is the one layer a normal cream never touches.</p>
+        <p>Skin is a barrier built to keep the world out. The active molecules in most creams are simply too large to pass it, so they sit on top, do a little for texture, and rinse away by morning. You were not doing it wrong. You were fighting your own skin.</p>
       </div>
     </div>
   </section>
@@ -212,11 +216,17 @@
   <!-- ===== SLIDE 3 · REASON 2 ===== -->
   <section class="slide" data-label="Reason 2 of 5" data-sub="The injectables trap">
     <div class="slide-inner">
-      <div class="rtag">Reason 02</div>
-      <div class="lhead"><div class="ln">2</div><h3 class="lh">Injectables work, but you rent the results</h3></div>
-      <div class="lb">
-        <p>Injectables get past the barrier because a needle takes the barrier out of the equation entirely. That is why they work. It is also where the trouble starts: appointments, real money, and the quiet fear of walking out looking like a slightly different person.</p>
-        <p>And it is not a purchase so much as a subscription. Filler fades, so you go back, and you keep going back every six months for as long as you want the effect. Plenty of women do the math on that and decide there has to be a gentler way to spend the next ten years.</p>
+      <div class="shero">
+        <img src="assets/list-r2-needle.png" alt="A single cosmetic syringe on a smooth grey surface">
+        <span class="ktag">Reason 02</span>
+        <span class="bignum">2</span>
+      </div>
+      <p class="hcap">A needle skips the barrier. It also skips your budget and your calendar.</p>
+      <div class="rbody">
+        <h3 class="lh">Injectables work. But you only rent the results.</h3>
+        <div class="gist">Filler fades, so you go back every six months, for as long as you want to keep it.</div>
+        <p>Injectables get past the barrier because the needle takes it out of the equation. That is why they work. It is also where the trouble starts: appointments, real money, and the worry of walking out looking a little unlike yourself.</p>
+        <p>And it is less a purchase than a subscription. A lot of women look at the next ten years of that and decide there has to be a gentler way.</p>
       </div>
     </div>
   </section>
@@ -224,43 +234,53 @@
   <!-- ===== SLIDE 4 · REASON 3 ===== -->
   <section class="slide" data-label="Reason 3 of 5" data-sub="The R3a fix">
     <div class="slide-inner">
-      <div class="rtag">Reason 03</div>
-      <div class="lhead"><div class="ln">3</div><h3 class="lh">A Colorado lab fixed the one thing everyone else ignored</h3></div>
-      <div class="lb">
-        <p>SoluRetinol is made by <strong>SoluWellness</strong>, a Colorado skincare company, around a patent-pending delivery technology called <strong>R3a&trade;</strong>. Their argument is almost boringly simple. Retinol already works, it is one of the most studied compounds in all of skincare, and nobody in dermatology is still debating whether it does something. The failure was never the molecule. The failure was that the molecule could not get through the front door.</p>
-        <p>So they shrank it. R3a solubilizes the retinol and reduces it to nanometer scale, small enough to pass the barrier instead of resting on it. Same proven active, finally delivered to the layer where it can do structural work rather than cosmetic work.</p>
-        <figure class="rdiagram">
-          <svg viewBox="0 0 600 316" role="img" aria-label="Ordinary retinol stays on the skin surface while R3a delivery reaches the deep layer" xmlns="http://www.w3.org/2000/svg">
-            <style>
-              .dt{font:700 14px Rubik,system-ui,-apple-system,sans-serif;fill:#161616}
-              .ds{font:400 11px Rubik,system-ui,-apple-system,sans-serif;fill:#6a6a6a}
-            </style>
-            <text class="dt" x="20" y="30">Ordinary retinol</text>
-            <rect x="20" y="72" width="250" height="194" rx="8" fill="#ece9e4"/>
-            <line x1="20" y1="72" x2="270" y2="72" stroke="#161616" stroke-width="2"/>
-            <g fill="#fff" stroke="#161616" stroke-width="2"><circle cx="55" cy="58" r="13"/><circle cx="105" cy="58" r="13"/><circle cx="155" cy="58" r="13"/><circle cx="205" cy="58" r="13"/><circle cx="245" cy="58" r="13"/></g>
-            <text class="ds" x="145" y="296" text-anchor="middle">Too large to absorb. It sits on top.</text>
-            <text class="dt" x="330" y="30">SoluRetinol &#183; R3a&trade;</text>
-            <rect x="330" y="72" width="250" height="194" rx="8" fill="#ece9e4"/>
-            <line x1="330" y1="72" x2="580" y2="72" stroke="#161616" stroke-width="2"/>
-            <g fill="#fff" stroke="#161616" stroke-width="1.4"><circle cx="360" cy="58" r="3"/><circle cx="392" cy="58" r="3"/><circle cx="424" cy="58" r="3"/><circle cx="456" cy="58" r="3"/><circle cx="488" cy="58" r="3"/><circle cx="520" cy="58" r="3"/><circle cx="552" cy="58" r="3"/></g>
-            <g fill="#161616"><circle cx="356" cy="96" r="2.6"/><circle cx="386" cy="104" r="2.6"/><circle cx="418" cy="94" r="2.6"/><circle cx="450" cy="102" r="2.6"/><circle cx="482" cy="95" r="2.6"/><circle cx="514" cy="103" r="2.6"/><circle cx="548" cy="97" r="2.6"/><circle cx="366" cy="134" r="2.6"/><circle cx="398" cy="142" r="2.6"/><circle cx="430" cy="132" r="2.6"/><circle cx="462" cy="140" r="2.6"/><circle cx="494" cy="134" r="2.6"/><circle cx="526" cy="142" r="2.6"/><circle cx="552" cy="132" r="2.6"/><circle cx="352" cy="176" r="2.6"/><circle cx="384" cy="170" r="2.6"/><circle cx="416" cy="180" r="2.6"/><circle cx="448" cy="172" r="2.6"/><circle cx="480" cy="182" r="2.6"/><circle cx="512" cy="174" r="2.6"/><circle cx="544" cy="180" r="2.6"/><circle cx="362" cy="212" r="2.6"/><circle cx="396" cy="220" r="2.6"/><circle cx="428" cy="210" r="2.6"/><circle cx="460" cy="220" r="2.6"/><circle cx="492" cy="212" r="2.6"/><circle cx="524" cy="220" r="2.6"/><circle cx="550" cy="214" r="2.6"/><circle cx="372" cy="248" r="2.6"/><circle cx="404" cy="242" r="2.6"/><circle cx="436" cy="250" r="2.6"/><circle cx="468" cy="244" r="2.6"/><circle cx="500" cy="250" r="2.6"/><circle cx="532" cy="244" r="2.6"/></g>
-            <text class="ds" x="455" y="296" text-anchor="middle">Shrunk to nanosize. It reaches the deep layer.</text>
-          </svg>
-          <figcaption>How R3a delivery differs from ordinary retinol. Illustration.</figcaption>
-        </figure>
+      <div class="rhead">
+        <div class="bignum2">3</div>
+        <div class="htx">
+          <span class="ktag2">Reason 03</span>
+          <h3 class="lh">A Colorado lab fixed the one thing everyone ignored</h3>
+        </div>
       </div>
+      <div class="gist">Retinol was never the problem. Getting it through the door was.</div>
+      <p>SoluRetinol is built by <strong>SoluWellness</strong>, a Colorado skincare company, around a patent-pending delivery system called <strong>R3a&trade;</strong>. Retinol already works. It is one of the most studied compounds in all of skincare, and nobody is still arguing about it. It just could not get through the barrier.</p>
+      <p>So they shrank it. R3a reduces the retinol to nanometer scale, small enough to pass through instead of resting on top. Same proven active, finally delivered where it can do real structural work.</p>
+      <figure class="rdiagram">
+        <svg viewBox="0 0 600 316" role="img" aria-label="Ordinary retinol stays on the skin surface while R3a delivery reaches the deep layer" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .dt{font:700 14px Rubik,system-ui,-apple-system,sans-serif;fill:#161616}
+            .ds{font:400 11px Rubik,system-ui,-apple-system,sans-serif;fill:#6a6a6a}
+          </style>
+          <text class="dt" x="20" y="30">Ordinary retinol</text>
+          <rect x="20" y="72" width="250" height="194" rx="8" fill="#ece9e4"/>
+          <line x1="20" y1="72" x2="270" y2="72" stroke="#161616" stroke-width="2"/>
+          <g fill="#fff" stroke="#161616" stroke-width="2"><circle cx="55" cy="58" r="13"/><circle cx="105" cy="58" r="13"/><circle cx="155" cy="58" r="13"/><circle cx="205" cy="58" r="13"/><circle cx="245" cy="58" r="13"/></g>
+          <text class="ds" x="145" y="296" text-anchor="middle">Too large to absorb. It sits on top.</text>
+          <text class="dt" x="330" y="30">SoluRetinol &#183; R3a&trade;</text>
+          <rect x="330" y="72" width="250" height="194" rx="8" fill="#ece9e4"/>
+          <line x1="330" y1="72" x2="580" y2="72" stroke="#161616" stroke-width="2"/>
+          <g fill="#fff" stroke="#161616" stroke-width="1.4"><circle cx="360" cy="58" r="3"/><circle cx="392" cy="58" r="3"/><circle cx="424" cy="58" r="3"/><circle cx="456" cy="58" r="3"/><circle cx="488" cy="58" r="3"/><circle cx="520" cy="58" r="3"/><circle cx="552" cy="58" r="3"/></g>
+          <g fill="#161616"><circle cx="356" cy="96" r="2.6"/><circle cx="386" cy="104" r="2.6"/><circle cx="418" cy="94" r="2.6"/><circle cx="450" cy="102" r="2.6"/><circle cx="482" cy="95" r="2.6"/><circle cx="514" cy="103" r="2.6"/><circle cx="548" cy="97" r="2.6"/><circle cx="366" cy="134" r="2.6"/><circle cx="398" cy="142" r="2.6"/><circle cx="430" cy="132" r="2.6"/><circle cx="462" cy="140" r="2.6"/><circle cx="494" cy="134" r="2.6"/><circle cx="526" cy="142" r="2.6"/><circle cx="552" cy="132" r="2.6"/><circle cx="352" cy="176" r="2.6"/><circle cx="384" cy="170" r="2.6"/><circle cx="416" cy="180" r="2.6"/><circle cx="448" cy="172" r="2.6"/><circle cx="480" cy="182" r="2.6"/><circle cx="512" cy="174" r="2.6"/><circle cx="544" cy="180" r="2.6"/><circle cx="362" cy="212" r="2.6"/><circle cx="396" cy="220" r="2.6"/><circle cx="428" cy="210" r="2.6"/><circle cx="460" cy="220" r="2.6"/><circle cx="492" cy="212" r="2.6"/><circle cx="524" cy="220" r="2.6"/><circle cx="550" cy="214" r="2.6"/><circle cx="372" cy="248" r="2.6"/><circle cx="404" cy="242" r="2.6"/><circle cx="436" cy="250" r="2.6"/><circle cx="468" cy="244" r="2.6"/><circle cx="500" cy="250" r="2.6"/><circle cx="532" cy="244" r="2.6"/></g>
+          <text class="ds" x="455" y="296" text-anchor="middle">Shrunk to nanosize. It reaches the deep layer.</text>
+        </svg>
+        <figcaption>How R3a delivery differs from ordinary retinol. Illustration.</figcaption>
+      </figure>
     </div>
   </section>
 
   <!-- ===== SLIDE 5 · REASON 4 ===== -->
   <section class="slide" data-label="Reason 4 of 5" data-sub="The topical filler">
     <div class="slide-inner">
-      <div class="rtag">Reason 04</div>
-      <div class="lhead"><div class="ln">4</div><h3 class="lh">It behaves like a filler you apply instead of inject</h3></div>
-      <div class="lb">
-        <p>This is the step people underestimate. The company calls SoluRetinol a topical filler rather than a serum because of a second mechanism, <strong>Thermal Fusion&trade;</strong>. The formula goes on as a liquid and, at skin temperature, thickens into a gel that settles down into the crease of a line instead of bridging over the top of it.</p>
-        <p>You are not painting a line out. You are filling it in from inside, the way a filler does, without anything being injected. It is a different idea from every cream you have tried, and it is why the before-and-afters look like softening rather than covering.</p>
+      <div class="shero">
+        <img src="assets/list-r4-serum.png" alt="A single glossy drop of serum with a gel-like texture">
+        <span class="ktag">Reason 04</span>
+        <span class="bignum">4</span>
+      </div>
+      <p class="hcap">A liquid that turns to gel on contact with your skin.</p>
+      <div class="rbody">
+        <h3 class="lh">It works like a filler you apply, not inject</h3>
+        <div class="gist">It settles into the crease of a line instead of bridging over the top of it.</div>
+        <p>The company calls it a topical filler, not a serum, because of a second mechanism called <strong>Thermal Fusion&trade;</strong>. It goes on as a liquid and, at skin temperature, thickens into a gel that sinks into the line instead of sitting across it.</p>
+        <p>You are not painting the line out. You are filling it in from the inside, the way a filler does, with no needle. That is why the before-and-afters look like softening, not covering.</p>
       </div>
     </div>
   </section>
@@ -268,23 +288,22 @@
   <!-- ===== SLIDE 6 · REASON 5 ===== -->
   <section class="slide" data-label="Reason 5 of 5" data-sub="Gentle, and on schedule">
     <div class="slide-inner">
-      <div class="rtag">Reason 05</div>
-      <div class="lhead"><div class="ln">5</div><h3 class="lh">It is gentle enough not to sting, and the results arrive on a schedule</h3></div>
-      <div class="lb">
-        <p>The retinol is water-soluble, so it absorbs without the flaking, redness, and peeling that make most people quit traditional retinol within weeks. Women who have abandoned two or three previous retinols are a large share of the reviews, and the thing they mention first is that it never stung.</p>
+      <div class="shero">
+        <img src="assets/adv-ba-proof1-r6.jpg" alt="A customer before and after the routine, with softer lines and brighter skin">
+        <span class="ktag">Reason 05</span>
+        <span class="bignum">5</span>
+      </div>
+      <p class="hcap">A real customer, before and after. Individual results vary.</p>
+      <div class="rbody">
+        <h3 class="lh">Gentle enough not to sting, and it works on a schedule</h3>
+        <div class="gist">No burning, no flaking, and a change most women can see in about 12 days.</div>
+        <p>The retinol is water-soluble, so it absorbs without the redness and peeling that make people quit traditional retinol in a week. Women who gave up on two or three retinols before are all over the reviews, and the first thing they mention is that it never stung.</p>
         <p>What stands out most is how consistent people are about <em>when</em> the change shows up, and it matches the company&rsquo;s own timeline.</p>
         <div class="timeline">
           <div class="row"><div class="wk">Week 1-2</div><div class="tx">Skin feels <b>smoother and more hydrated</b> and looks noticeably refreshed.</div></div>
           <div class="row"><div class="wk">Week 3-6</div><div class="tx">Fine lines <b>begin to soften</b>, especially around the eyes and mouth.</div></div>
           <div class="row"><div class="wk">Week 7-12</div><div class="tx">Deeper wrinkles appear <b>visibly diminished</b>. Skin looks firmer and more luminous.</div></div>
         </div>
-        <figure class="bafig">
-          <div class="baimg">
-            <img src="assets/adv-ba-proof1-r6.jpg" alt="A customer before and after the routine, with softer lines and brighter, more even skin">
-            <span class="lbl b">Before</span><span class="lbl a">After</span>
-          </div>
-          <figcaption>A customer before and after the routine. Customer photo; individual results vary.</figcaption>
-        </figure>
         <div class="tcard">
           <div class="body">
             <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -296,10 +315,10 @@
     </div>
   </section>
 
-  <!-- ===== SLIDE 7 · THE PRODUCT / OFFER ===== -->
+  <!-- ===== SLIDE 7 · OFFER ===== -->
   <section class="slide" data-label="The offer" data-sub="What women are buying">
     <div class="slide-inner">
-      <div class="eyebrow">The Product</div>
+      <div class="eyebrow first">The Product</div>
       <h2>What women are actually buying</h2>
       <p>It is <strong>SoluRetinol</strong>, a two-step <strong>Day &amp; Night serum system</strong>. A light Daytime serum each morning, a stronger Nighttime serum before bed. That is the whole routine. No ten-step regimen, no device, nothing to charge or replace.</p>
       <div class="reveal">
@@ -338,7 +357,6 @@
 </div>
 </main>
 
-<!-- ============ SLIDESHOW NAV ============ -->
 <nav class="snav" id="snav" data-first="1">
   <a class="back" id="navBack" role="button" tabindex="0">&lsaquo; Back</a>
   <div class="count"><span id="navLabel">Start here</span><small id="navSub">Swipe through 5 reasons</small></div>
@@ -353,7 +371,6 @@
   var bar = document.getElementById('pbar');
   var label = document.getElementById('navLabel');
   var sub = document.getElementById('navSub');
-
   function show(n, dir){
     n = Math.max(0, Math.min(total - 1, n));
     if(n === i && dir) return;
@@ -369,7 +386,6 @@
     snav.setAttribute('data-last', i === total - 1 ? '1' : '0');
     window.scrollTo(0, 0);
   }
-
   document.getElementById('navNext').addEventListener('click', function(){ show(i + 1, 1); });
   document.getElementById('navBack').addEventListener('click', function(){ show(i - 1, -1); });
   document.addEventListener('keydown', function(e){

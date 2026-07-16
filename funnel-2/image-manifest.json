@@ -31,6 +31,48 @@
       "status": "done"
     },
     {
+      "id": "list-r1-cream-01",
+      "page": "listicle.html",
+      "slot": "listicle / reason 1 hero, cream on skin surface",
+      "role": "content",
+      "alt": "A dab of face cream resting on the surface of skin",
+      "target_filename": "list-r1-cream-01.jpg",
+      "width": 1200,
+      "height": 805,
+      "aspect": "1200:805",
+      "transparent": false,
+      "prompt": "Client asset placed in the listicle / reason 1 hero, cream on skin surface slot.",
+      "status": "done"
+    },
+    {
+      "id": "list-r2-needle-01",
+      "page": "listicle.html",
+      "slot": "listicle / reason 2 hero, cosmetic syringe",
+      "role": "content",
+      "alt": "A single cosmetic syringe on a smooth grey surface",
+      "target_filename": "list-r2-needle-01.jpg",
+      "width": 1200,
+      "height": 805,
+      "aspect": "1200:805",
+      "transparent": false,
+      "prompt": "Client asset placed in the listicle / reason 2 hero, cosmetic syringe slot.",
+      "status": "done"
+    },
+    {
+      "id": "list-r4-serum-01",
+      "page": "listicle.html",
+      "slot": "listicle / reason 4 hero, serum drop",
+      "role": "content",
+      "alt": "A single glossy drop of serum with a gel-like texture",
+      "target_filename": "list-r4-serum-01.jpg",
+      "width": 1200,
+      "height": 805,
+      "aspect": "1200:805",
+      "transparent": false,
+      "prompt": "Client asset placed in the listicle / reason 4 hero, serum drop slot.",
+      "status": "done"
+    },
+    {
       "id": "product-pair-single-01",
       "page": "listicle.html",
       "slot": "listicle / offer reveal card",
