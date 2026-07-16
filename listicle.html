@@ -155,6 +155,10 @@
   footer .links a:last-child{border-right:0}
   footer .disc{font-size:9.5px;line-height:1.6;color:#a6a6a6;max-width:490px;margin:14px auto 0;text-align:center}
 
+  /* ---- Foot nav zone: keeps the pinned arrows legible over any content ---- */
+  .navzone{position:fixed;left:0;right:0;bottom:0;height:104px;z-index:55;pointer-events:none;
+    background:linear-gradient(to top,rgba(255,255,255,.97),rgba(255,255,255,.72) 42%,rgba(255,255,255,0))}
+
   /* ---- Floating advance controls (no button bar) ---- */
   .adv{position:fixed;z-index:60;border-radius:50%;display:flex;align-items:center;justify-content:center;
     font-family:var(--sans);cursor:pointer;user-select:none;text-decoration:none;
@@ -376,17 +380,20 @@
 </div>
 </main>
 
+<div class="navzone"></div>
 <a class="adv back hide" id="navBack" role="button" tabindex="0" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
 <a class="adv next pulse" id="navNext" role="button" tabindex="0" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
 
 <script>
 (function(){
   var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
-  var total = slides.length, i = 0;
+  var total = slides.length, i = 0, anim = false;
   var segs = Array.prototype.slice.call(document.querySelectorAll('#pbar i'));
   var back = document.getElementById('navBack');
   var next = document.getElementById('navNext');
   var deck = document.getElementById('deck');
+
+  function inner(){ return slides[i].querySelector('.slide-inner'); }
 
   function show(n, dir){
     n = Math.max(0, Math.min(total - 1, n));
@@ -403,21 +410,61 @@
     window.scrollTo(0, 0);
   }
 
-  next.addEventListener('click', function(){ show(i + 1, 1); });
-  back.addEventListener('click', function(){ show(i - 1, -1); });
+  function go(step){ if(!anim){ var n = i + step; if(n >= 0 && n < total) show(n, step); } }
+
+  next.addEventListener('click', function(){ go(1); });
+  back.addEventListener('click', function(){ go(-1); });
   document.addEventListener('keydown', function(e){
-    if(e.key === 'ArrowRight') show(i + 1, 1);
-    else if(e.key === 'ArrowLeft') show(i - 1, -1);
+    if(e.key === 'ArrowRight') go(1);
+    else if(e.key === 'ArrowLeft') go(-1);
   });
 
-  // swipe (horizontal only, so vertical scroll still works)
-  var sx = 0, sy = 0, tracking = false;
-  deck.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; tracking = true; }, {passive:true});
-  deck.addEventListener('touchend', function(e){
-    if(!tracking) return; tracking = false;
-    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
-    if(Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.6){ if(dx < 0) show(i + 1, 1); else show(i - 1, -1); }
+  // ---- drag-to-swipe: the slide follows the finger, snaps or advances on release ----
+  var startX = 0, startY = 0, dragging = false, lock = null, dx = 0;
+
+  deck.addEventListener('touchstart', function(e){
+    if(anim){ dragging = false; return; }
+    startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+    dragging = true; lock = null; dx = 0;
   }, {passive:true});
+
+  deck.addEventListener('touchmove', function(e){
+    if(!dragging) return;
+    var mx = e.touches[0].clientX - startX, my = e.touches[0].clientY - startY;
+    if(lock === null && (Math.abs(mx) > 8 || Math.abs(my) > 8))
+      lock = Math.abs(mx) > Math.abs(my) * 1.2 ? 'h' : 'v';
+    if(lock === 'h'){
+      e.preventDefault();                                   // take over from vertical scroll
+      dx = mx;
+      if((i === 0 && dx > 0) || (i === total - 1 && dx < 0)) dx *= 0.3;   // edge resistance
+      var el = inner();
+      el.style.transition = 'none';
+      el.style.transform = 'translateX(' + dx + 'px)';
+      el.style.opacity = String(1 - Math.min(Math.abs(dx) / 520, 0.34));
+    }
+  }, {passive:false});
+
+  deck.addEventListener('touchend', function(){
+    if(!dragging) return; dragging = false;
+    if(lock !== 'h') return;
+    var el = inner(), thresh = Math.min(84, window.innerWidth * 0.24);
+    if(dx <= -thresh && i < total - 1) swipeOut(1, el);
+    else if(dx >= thresh && i > 0) swipeOut(-1, el);
+    else { el.style.transition = 'transform .3s cubic-bezier(.2,.8,.2,1), opacity .3s'; el.style.transform = ''; el.style.opacity = ''; }
+  }, {passive:true});
+
+  function swipeOut(step, el){
+    anim = true;
+    var W = window.innerWidth;
+    el.style.transition = 'transform .17s ease-out, opacity .17s ease-out';
+    el.style.transform = 'translateX(' + (step > 0 ? -W * 0.32 : W * 0.32) + 'px)';
+    el.style.opacity = '0';
+    setTimeout(function(){
+      el.style.transition = ''; el.style.transform = ''; el.style.opacity = '';   // reset outgoing before it hides
+      show(i + step, step);
+      anim = false;
+    }, 155);
+  }
 
   show(0, 0);
 })();
