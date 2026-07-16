@@ -158,9 +158,12 @@
   .adv{position:fixed;z-index:60;border-radius:50%;display:flex;align-items:center;justify-content:center;
     font-family:var(--sans);cursor:pointer;user-select:none;text-decoration:none;
     transition:transform .16s ease, opacity .22s ease, box-shadow .22s ease}
+  .adv svg{display:block}
   .adv:active{transform:scale(.92)}
-  .adv.next{right:18px;bottom:22px;width:54px;height:54px;background:var(--ink);color:#fff;font-size:27px;padding-bottom:3px;box-shadow:0 8px 22px rgba(0,0,0,.22)}
-  .adv.back{left:18px;bottom:26px;width:46px;height:46px;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);color:var(--ink);border:1px solid var(--line);font-size:22px;padding-bottom:2px}
+  .adv.next{right:18px;bottom:22px;width:54px;height:54px;background:var(--ink);color:#fff;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+  .adv.next svg{width:20px;height:20px;margin-left:1px}
+  .adv.back{left:18px;bottom:26px;width:46px;height:46px;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);color:var(--ink);border:1px solid var(--line)}
+  .adv.back svg{width:17px;height:17px;margin-left:-1px}
   .adv.hide{opacity:0;pointer-events:none;transform:scale(.7)}
   .adv.next.pulse{animation:pulse 1.9s ease-out infinite}
   @keyframes pulse{0%{box-shadow:0 8px 22px rgba(0,0,0,.22),0 0 0 0 rgba(22,22,22,.34)}70%{box-shadow:0 8px 22px rgba(0,0,0,.22),0 0 0 15px rgba(22,22,22,0)}100%{box-shadow:0 8px 22px rgba(0,0,0,.22),0 0 0 0 rgba(22,22,22,0)}}
@@ -372,8 +375,8 @@
 </div>
 </main>
 
-<a class="adv back hide" id="navBack" role="button" tabindex="0" aria-label="Previous">&lsaquo;</a>
-<a class="adv next pulse" id="navNext" role="button" tabindex="0" aria-label="Next">&rsaquo;</a>
+<a class="adv back hide" id="navBack" role="button" tabindex="0" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+<a class="adv next pulse" id="navNext" role="button" tabindex="0" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
 
 <script>
 (function(){
