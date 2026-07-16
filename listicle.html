@@ -18,7 +18,7 @@
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--body);font-family:var(--serif);line-height:1.58;font-size:18px;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--body);font-family:var(--serif);line-height:1.58;font-size:18px}
   img{display:block;max-width:100%;height:auto}
   a{color:inherit}
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
@@ -33,6 +33,7 @@
   .pbar i.on{background:var(--ink)}
 
   /* ---- Slides ---- */
+  .deck-area{overflow-x:clip}   /* clip hero/animation overflow here, NOT on <body> -- body overflow breaks position:fixed on mobile */
   .deck-area .wrap{padding-top:0;padding-bottom:104px}
   .slide{display:none}
   .slide.active{display:block}
@@ -160,9 +161,9 @@
     transition:transform .16s ease, opacity .22s ease, box-shadow .22s ease}
   .adv svg{display:block}
   .adv:active{transform:scale(.92)}
-  .adv.next{right:18px;bottom:22px;width:54px;height:54px;background:var(--ink);color:#fff;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+  .adv.next{right:18px;bottom:calc(22px + env(safe-area-inset-bottom));width:54px;height:54px;background:var(--ink);color:#fff;box-shadow:0 8px 22px rgba(0,0,0,.22)}
   .adv.next svg{width:20px;height:20px;margin-left:1px}
-  .adv.back{left:18px;bottom:26px;width:46px;height:46px;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);color:var(--ink);border:1px solid var(--line)}
+  .adv.back{left:18px;bottom:calc(26px + env(safe-area-inset-bottom));width:46px;height:46px;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);color:var(--ink);border:1px solid var(--line)}
   .adv.back svg{width:17px;height:17px;margin-left:-1px}
   .adv.hide{opacity:0;pointer-events:none;transform:scale(.7)}
   .adv.next.pulse{animation:pulse 1.9s ease-out infinite}
