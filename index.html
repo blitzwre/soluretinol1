@@ -1,13 +1,57 @@
-<!DOCTYPE html>
-<html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SoluRetinol</title>
-<meta http-equiv="refresh" content="0; url=SoluRetinol.html">
-<link rel="canonical" href="SoluRetinol.html">
-<script>location.replace("SoluRetinol.html");</script>
-<style>html,body{margin:0;height:100%;background:#fff;font-family:Rubik,system-ui,sans-serif;color:#1c1c1c;display:flex;align-items:center;justify-content:center}</style>
+<title>SoluRetinol — Funnel Previews</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--ink:#161616;--body:#333;--muted:#767676;--line:#e6e6e6;--panel:#f6f6f4;--bg:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--body);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55;-webkit-text-size-adjust:100%}
+  .wrap{max-width:640px;margin:0 auto;padding:44px 20px 60px}
+  .kicker{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+  h1{font-size:26px;line-height:1.2;color:var(--ink);margin:0 0 8px;letter-spacing:-.02em}
+  .lead{font-size:15px;color:var(--muted);margin:0 0 30px}
+  .card{border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 18px;background:var(--bg)}
+  .card h2{font-size:13px;font-weight:800;letter-spacing:.03em;color:var(--ink);margin:0 0 4px;text-transform:uppercase}
+  .card .sub{font-size:13px;color:var(--muted);margin:0 0 16px}
+  .row{display:flex;flex-direction:column;gap:10px}
+  a.page{display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;color:var(--ink);
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-weight:600;font-size:15px;
+    transition:transform .12s ease, box-shadow .12s ease}
+  a.page:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+  a.page .tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  a.page .arw{color:var(--muted);font-weight:400}
+  .foot{font-size:12px;color:var(--muted);margin-top:26px;line-height:1.6;border-top:1px solid var(--line);padding-top:18px}
+  code{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:12px}
+</style>
 </head>
 <body>
-<a href="SoluRetinol.html">Continue to SoluRetinol</a>
-</body></html>
+<div class="wrap">
+  <p class="kicker">SoluRetinol · Day &amp; Night System</p>
+  <h1>Funnel previews</h1>
+  <p class="lead">Two direct-response funnels, each a pre-sell page paired with its own product page. Every link below is a live preview served from GitHub Pages.</p>
+
+  <div class="card">
+    <h2>Funnel 1</h2>
+    <p class="sub">Advertorial pre-sell &rarr; PDP 1</p>
+    <div class="row">
+      <a class="page" href="funnel-1/advertorial.html"><span>Advertorial <span class="tag">pre-sell</span></span><span class="arw">Open &rarr;</span></a>
+      <a class="page" href="funnel-1/pdp-1.html"><span>PDP 1 <span class="tag">product page</span></span><span class="arw">Open &rarr;</span></a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Funnel 2</h2>
+    <p class="sub">Listicle slideshow pre-sell &rarr; PDP 2</p>
+    <div class="row">
+      <a class="page" href="funnel-2/listicle.html"><span>Listicle slideshow <span class="tag">pre-sell</span></span><span class="arw">Open &rarr;</span></a>
+      <a class="page" href="funnel-2/pdp-2.html"><span>PDP 2 <span class="tag">product page</span></span><span class="arw">Open &rarr;</span></a>
+    </div>
+  </div>
+
+  <p class="foot">These previews stay live as long as the <code>blitzwre/soluretinol1</code> repository stays public with GitHub Pages enabled. The URLs are fixed to their folder paths, so they will not change unless the files are renamed or moved.</p>
+</div>
+</body>
+</html>
