@@ -255,6 +255,11 @@ FONTS_PDP1  = read(os.path.join(BUILD, "fonts-pdp1.css"))
 FONTS_ICONS = read(os.path.join(BUILD, "fonts-icons.css"))
 TW_CSS      = read(os.path.join(BUILD, "tw", "out.css"))
 
+# Force every page to open at the top: disable the browser's scroll restoration and
+# scroll to 0 on pageshow (covers fresh load, reload, and back/forward bfcache restore).
+SCROLLTOP = ("<script>try{history.scrollRestoration='manual';}catch(e){}"
+             "window.addEventListener('pageshow',function(){window.scrollTo(0,0);});</script>")
+
 def remap(h, page, table):
     for old, (new, slot, role, alt, tr) in table.items():
         rel = emit(os.path.join(SRC, old), new, page, slot, role, alt, tr)
@@ -486,6 +491,8 @@ for page in ("pdp-2.html", "advertorial.html", "listicle.html", "pdp-1.html"):
     pp = os.path.join(OUT, page); s = read(pp)
     for old, new in renames.items():
         s = s.replace("images/" + old, "images/" + new)
+    if SCROLLTOP not in s:
+        s = s.replace('</head>', SCROLLTOP + '</head>', 1)
     write(pp, s)
 
 for e in mani["images"]:
