@@ -31,7 +31,7 @@ Everything below works offline, with no backend:
 - **Sticky ADD TO CART bar.** Pinned on mobile; its price stays in sync with the selected tier.
 - **Accordions / FAQ.** Open and close on the product page.
 - **Product gallery + testimonial row on pdp-2.html.** Main image plus thumbnails; the "happy customers" strip is injected by an inline script (images pdp-testimonial-02/03/04).
-- **Pre-sell CTAs are intentionally inert.** They are `<a class="cta">` (and the slideshow Back/Next are `<a role="button">`) with no `href`, per the request to keep the pre-sell unwired from the PDP.
+- **Pre-sell CTAs are intentionally inert.** They are `<a class="cta">` (and the slideshow Back/Next arrows are `<a role="button">` driven by inline JS) with no `href`, per the zero-URL rule. Wire them at deploy.
 
 Every former `<button>` on the product page was converted to `<a role="button">` for CheckoutChamp
 routing, with the theme's button CSS extended so the controls render identically.

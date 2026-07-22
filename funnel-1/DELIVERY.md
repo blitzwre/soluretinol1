@@ -31,7 +31,7 @@ Everything below works offline, with no backend:
 - **Sticky ADD TO CART bar.** Pinned on mobile; its price stays in sync with the selected tier.
 - **Accordions / FAQ.** Open and close on the product page.
 
-- **Pre-sell CTAs are intentionally inert.** They are `<a class="cta">` with no `href`, per the request to keep the pre-sell unwired from the PDP.
+- **Pre-sell CTAs are intentionally inert.** They are `<a class="cta">` with no `href`, per the zero-URL rule. Wire them at deploy.
 
 Every former `<button>` on the product page was converted to `<a role="button">` for CheckoutChamp
 routing, with the theme's button CSS extended so the controls render identically.

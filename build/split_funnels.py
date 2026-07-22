@@ -61,7 +61,7 @@ Everything below works offline, with no backend:
 - **Sticky ADD TO CART bar.** Pinned on mobile; its price stays in sync with the selected tier.
 - **Accordions / FAQ.** Open and close on the product page.
 {'- **Product gallery + testimonial row on pdp-2.html.** Main image plus thumbnails; the "happy customers" strip is injected by an inline script (images pdp-testimonial-02/03/04).' if pdp_is_shopify else ''}
-- **Pre-sell CTAs are intentionally inert.** They are `<a class="cta">`{' (and the slideshow Back/Next are `<a role="button">`)' if presell == 'listicle.html' else ''} with no `href`, per the request to keep the pre-sell unwired from the PDP.
+- **Pre-sell CTAs are intentionally inert.** They are `<a class="cta">`{' (and the slideshow Back/Next arrows are `<a role="button">` driven by inline JS)' if presell == 'listicle.html' else ''} with no `href`, per the zero-URL rule. Wire them at deploy.
 
 Every former `<button>` on the product page was converted to `<a role="button">` for CheckoutChamp
 routing, with the theme's button CSS extended so the controls render identically.
@@ -136,19 +136,38 @@ def build(name, f):
 
     open(os.path.join(out, "DELIVERY.md"), "w", encoding="utf-8").write(delivery_md(name, f))
 
-    # zip the folder
+    # ---- REVIEW-ONLY copy of the pre-sell, with its CTAs wired to the PDP ----
+    # The delivered pre-sell must stay link-free (zero-URL rule), but a reviewer clicking a
+    # dead CTA never reaches the product page. So we emit a sibling *-preview.html that lives in
+    # this folder (sharing images/) purely so the hosted preview clicks through end to end.
+    # It is EXCLUDED from the zip below, so nothing with links is ever delivered.
+    presell, pdp = f["presell"], f["pdp"]
+    ph = open(os.path.join(out, presell), encoding="utf-8").read()
+    wired = (ph.replace('<a class="cta">', '<a class="cta" href="%s">' % pdp)
+               .replace('<a class="sbtn">', '<a class="sbtn" href="%s">' % pdp))
+    n_wired = wired.count('href="%s"' % pdp)
+    if not n_wired:
+        raise SystemExit("!! %s: no CTAs found to wire in %s" % (name, presell))
+    preview_name = presell.replace(".html", "-preview.html")
+    open(os.path.join(out, preview_name), "w", encoding="utf-8").write(wired)
+
+    # zip the folder -- preview copies are review-only and never ship
     zp = os.path.join(SRC, name + ".zip")
     if os.path.exists(zp): os.remove(zp)
+    zipped = 0
     with zipfile.ZipFile(zp, "w", zipfile.ZIP_DEFLATED) as z:
         for root, _, files in os.walk(out):
             for fn in sorted(files):
+                if fn.endswith("-preview.html"): continue
                 ap = os.path.join(root, fn)
                 z.write(ap, os.path.join(name, os.path.relpath(ap, out)))
+                zipped += 1
 
     total = sum(os.path.getsize(os.path.join(img, fn)) for fn in os.listdir(img))
-    print("[%s]  %s + %s  |  %d images (%.1f MB)  |  %d manifest entries  |  zip %.1f MB"
+    print("[%s]  %s + %s  |  %d images (%.1f MB)  |  %d manifest entries  |  zip %.1f MB (%d files)"
           % (name, f["presell"], f["pdp"], len(referenced), total / 1e6, len(imgs),
-             os.path.getsize(zp) / 1e6))
+             os.path.getsize(zp) / 1e6, zipped))
+    print("        preview-only: %s  (%d CTAs -> %s, excluded from zip)" % (preview_name, n_wired, pdp))
 
 for name, f in FUNNELS.items():
     build(name, f)
