@@ -511,9 +511,11 @@ for page in ("pdp-2.html", "advertorial.html", "listicle.html", "pdp-1.html"):
     if SCROLLTOP not in s:
         s = s.replace('</head>', SCROLLTOP + '</head>', 1)
     if page == "pdp-2.html" and PDP2_PRICEFIX not in s:
-        before = s
-        s = s.replace('</body>', PDP2_PRICEFIX + '</body>', 1)
-        assert s != before, "pdp-2 price fix not injected (no </body> found)"
+        pf_before = s
+        # this capture has no </body>; inject before </head> instead (the fix self-defers
+        # via DOMContentLoaded, so head placement is fine)
+        s = s.replace('</head>', PDP2_PRICEFIX + '</head>', 1)
+        assert s != pf_before, "pdp-2 price fix not injected (no </head> found)"
     write(pp, s)
 
 for e in mani["images"]:
