@@ -265,22 +265,25 @@ SCROLLTOP = ("<script>try{history.scrollRestoration='manual';}catch(e){}"
 # listener reads the selected tier's own printed prices and mirrors them into the headline. It
 # touches nothing else (no theme JS, no gallery/sticky/cart logic), and no-ops if the elements
 # are absent.
-PDP2_PRICEFIX = ("<script>(function(){function init(){"
-  "var r=document.querySelectorAll('input[name=solupo]');"
-  "var s=document.querySelector('span.sale-price.order-2');if(!r.length||!s)return;"
+PDP2_PRICEFIX = ("<script>(function(){"
+  # Re-query the price element every time: the theme re-renders the supply rows AND the price
+  # after load, so cached element refs (and listeners bound at DOMContentLoaded) go stale.
+  "function apply(l){if(!l)return;var s=document.querySelector('span.sale-price.order-2');if(!s)return;"
   "var b=s.closest('.price');var c=b?b.querySelector('s.regular-price'):null;"
-  # read the selected tier's OWN printed prices ($59.00 / $69.00) off its <label>
-  "function apply(l){if(!l)return;var m=(l.textContent.match(/\\$\\d[\\d,]*\\.\\d\\d/g))||[];"
+  "var m=(l.textContent.match(/\\$\\d[\\d,]*\\.\\d\\d/g))||[];"
   "if(m[0])s.textContent=m[0];if(c&&m[1])c.textContent=m[1];}"
-  # the theme selects via a click handler that never fires a native 'change' on the radio,
-  # so bind to the label 'click' (mouse) and the radio 'change' (keyboard) for robustness
-  "var cur=null;"
-  "for(var i=0;i<r.length;i++){var l=r[i].closest('label');if(!l)continue;"
-  "(function(ll,rr){ll.addEventListener('click',function(){apply(ll);});"
-  "rr.addEventListener('change',function(){apply(ll);});})(l,r[i]);"
-  "if(r[i].checked)cur=l;}"
-  "apply(cur||(r[0]&&r[0].closest('label')));}"
-  "if(document.readyState!=='loading')init();else document.addEventListener('DOMContentLoaded',init);})();</script>")
+  "function labOf(el){return el&&el.closest?el.closest('label'):null;}"
+  "function isTier(l){return l&&l.querySelector&&l.querySelector('input[name=solupo]');}"
+  # Event DELEGATION on document survives the re-render (the theme fires no native 'change',
+  # so match the label 'click'; also catch keyboard-driven 'change').
+  "document.addEventListener('click',function(e){var l=labOf(e.target);if(isTier(l))apply(l);},true);"
+  "document.addEventListener('change',function(e){if(e.target&&e.target.name==='solupo'){var l=labOf(e.target);if(l)apply(l);}},true);"
+  # Idempotent initial sync (mirrors the checked tier, incl. compare); retried after the theme settles.
+  "function initSync(){var r=document.querySelectorAll('input[name=solupo]');if(!r.length)return;"
+  "for(var i=0;i<r.length;i++){if(r[i].checked){apply(r[i].closest('label'));return;}}apply(r[0].closest('label'));}"
+  "if(document.readyState!=='loading')initSync();else document.addEventListener('DOMContentLoaded',initSync);"
+  "setTimeout(initSync,400);setTimeout(initSync,1200);"
+  "})();</script>")
 
 def remap(h, page, table):
     for old, (new, slot, role, alt, tr) in table.items():
