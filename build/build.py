@@ -260,6 +260,23 @@ TW_CSS      = read(os.path.join(BUILD, "tw", "out.css"))
 SCROLLTOP = ("<script>try{history.scrollRestoration='manual';}catch(e){}"
              "window.addEventListener('pageshow',function(){window.scrollTo(0,0);});</script>")
 
+# pdp-2 only: the captured theme's tier handler updates the gallery + sticky price on supply
+# change, but leaves the headline sale/compare price stuck at the 1-pair value. This ADDITIVE
+# listener reads the selected tier's own printed prices and mirrors them into the headline. It
+# touches nothing else (no theme JS, no gallery/sticky/cart logic), and no-ops if the elements
+# are absent.
+PDP2_PRICEFIX = ("<script>(function(){function init(){"
+  "var r=document.querySelectorAll('input[name=solupo]');"
+  "var s=document.querySelector('span.sale-price.order-2');if(!r.length||!s)return;"
+  "var b=s.closest('.price');var c=b?b.querySelector('s.regular-price'):null;"
+  "function px(x){var l=x.closest('label')||x.parentElement;"
+  "var m=(l.textContent.match(/\\$\\d[\\d,]*\\.\\d\\d/g))||[];return{s:m[0],r:m[1]};}"
+  "function sync(x){if(!x||!x.checked)return;var p=px(x);"
+  "if(p.s)s.textContent=p.s;if(c&&p.r)c.textContent=p.r;}"
+  "for(var i=0;i<r.length;i++){(function(x){x.addEventListener('change',function(){sync(x);});})(r[i]);}"
+  "var cur=null;for(var j=0;j<r.length;j++){if(r[j].checked){cur=r[j];break;}}sync(cur||r[0]);}"
+  "if(document.readyState!=='loading')init();else document.addEventListener('DOMContentLoaded',init);})();</script>")
+
 def remap(h, page, table):
     for old, (new, slot, role, alt, tr) in table.items():
         rel = emit(os.path.join(SRC, old), new, page, slot, role, alt, tr)
@@ -493,6 +510,10 @@ for page in ("pdp-2.html", "advertorial.html", "listicle.html", "pdp-1.html"):
         s = s.replace("images/" + old, "images/" + new)
     if SCROLLTOP not in s:
         s = s.replace('</head>', SCROLLTOP + '</head>', 1)
+    if page == "pdp-2.html" and PDP2_PRICEFIX not in s:
+        before = s
+        s = s.replace('</body>', PDP2_PRICEFIX + '</body>', 1)
+        assert s != before, "pdp-2 price fix not injected (no </body> found)"
     write(pp, s)
 
 for e in mani["images"]:
