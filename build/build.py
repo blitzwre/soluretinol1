@@ -269,12 +269,17 @@ PDP2_PRICEFIX = ("<script>(function(){function init(){"
   "var r=document.querySelectorAll('input[name=solupo]');"
   "var s=document.querySelector('span.sale-price.order-2');if(!r.length||!s)return;"
   "var b=s.closest('.price');var c=b?b.querySelector('s.regular-price'):null;"
-  "function px(x){var l=x.closest('label')||x.parentElement;"
-  "var m=(l.textContent.match(/\\$\\d[\\d,]*\\.\\d\\d/g))||[];return{s:m[0],r:m[1]};}"
-  "function sync(x){if(!x||!x.checked)return;var p=px(x);"
-  "if(p.s)s.textContent=p.s;if(c&&p.r)c.textContent=p.r;}"
-  "for(var i=0;i<r.length;i++){(function(x){x.addEventListener('change',function(){sync(x);});})(r[i]);}"
-  "var cur=null;for(var j=0;j<r.length;j++){if(r[j].checked){cur=r[j];break;}}sync(cur||r[0]);}"
+  # read the selected tier's OWN printed prices ($59.00 / $69.00) off its <label>
+  "function apply(l){if(!l)return;var m=(l.textContent.match(/\\$\\d[\\d,]*\\.\\d\\d/g))||[];"
+  "if(m[0])s.textContent=m[0];if(c&&m[1])c.textContent=m[1];}"
+  # the theme selects via a click handler that never fires a native 'change' on the radio,
+  # so bind to the label 'click' (mouse) and the radio 'change' (keyboard) for robustness
+  "var cur=null;"
+  "for(var i=0;i<r.length;i++){var l=r[i].closest('label');if(!l)continue;"
+  "(function(ll,rr){ll.addEventListener('click',function(){apply(ll);});"
+  "rr.addEventListener('change',function(){apply(ll);});})(l,r[i]);"
+  "if(r[i].checked)cur=l;}"
+  "apply(cur||(r[0]&&r[0].closest('label')));}"
   "if(document.readyState!=='loading')init();else document.addEventListener('DOMContentLoaded',init);})();</script>")
 
 def remap(h, page, table):
